@@ -3,7 +3,7 @@
 import '../routes/Index'; // Import Tailwind CSS first
 // import 'flowbite';
 // import { useEffect } from "react";
-import logo from '../assets/logo.png'
+import logo from '../assets/logoRed.png'
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 
 export  default function Component() {

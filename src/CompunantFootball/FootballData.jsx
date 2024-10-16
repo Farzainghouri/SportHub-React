@@ -53,7 +53,7 @@ export default function FootballData(){
         <div className="w-[100%] gap-[1.5%] flex flex-wrap mx-1">
         <div className=" w-[23%] my-4">
         <Card
-      className="max-w-sm "
+      className="max-w-sm new"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
       imgSrc={pic3}
     >
@@ -73,7 +73,7 @@ export default function FootballData(){
         <span className="text-3xl font-bold text-gray-900 dark:text-white">55</span>
         <a
           href="#"
-          className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+          className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
         >
          BUY
         </a>
@@ -82,7 +82,7 @@ export default function FootballData(){
         </div>
         <div className=" w-[23%]  my-4">
         <Card
-      className="max-w-sm h-full"
+      className="max-w-sm newh-full"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
       imgSrc={pic}
     >
@@ -96,7 +96,7 @@ export default function FootballData(){
         <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
         <a
           href="#"
-          className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+          className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
         >
          BUY
         </a>
@@ -105,7 +105,7 @@ export default function FootballData(){
         </div>
         <div className=" w-[23%]  my-4">
         <Card
-      className="max-w-sm h-full"
+      className="max-w-sm newh-full"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
       imgSrc={pic}
     >
@@ -119,7 +119,7 @@ export default function FootballData(){
         <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
         <a
           href="#"
-          className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+          className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
         >
          BUY
         </a>
@@ -128,7 +128,7 @@ export default function FootballData(){
         </div>
         <div className=" w-[23%]  my-4">
         <Card
-      className="max-w-sm h-full"
+      className="max-w-sm newh-full"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
       imgSrc={pic4}
     >
@@ -142,7 +142,7 @@ export default function FootballData(){
         <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
         <a
           href="#"
-          className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+          className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
         >
          BUY
         </a>
@@ -169,7 +169,7 @@ export default function FootballData(){
 
                     
                                   <Card key={item.id}
-      className="max-w-sm w-[23%] my-4"
+      className="max-w-sm neww-[23%] my-4"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
       imgSrc={item.Url}
     >
@@ -189,7 +189,7 @@ export default function FootballData(){
         <span className="text-3xl font-bold text-gray-900 dark:text-white">{item.price}</span>
         <a
           href="#"
-          className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+          className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
         >
          BUY
          </a>

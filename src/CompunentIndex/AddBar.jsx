@@ -3,7 +3,6 @@
 import '../routes/Index'; // Import Tailwind CSS first
 // import 'flowbite';
 // import { useEffect } from "react";
-import logo from '../assets/logo.png'
 import SellLogo from '../assets/sell.jpg'
 
 
