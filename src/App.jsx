@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import './index.css'; // Import Tailwind CSS first
 import 'flowbite';
+import { HashRouter as Router } from "react-router-dom";
 
 export default function App() {
   
