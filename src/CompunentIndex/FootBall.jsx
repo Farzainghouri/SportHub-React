@@ -28,7 +28,7 @@ export default function Cricket(){
       <div className="">
       <div className="flex justify-center items-center h-40  bg-gray-200 font-serif">
    <h1 className=" text-4xl  ">
-       BASKETBALL
+       FOOTBALL
    </h1>
 </div>
 
