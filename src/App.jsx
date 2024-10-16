@@ -7,6 +7,7 @@ import Football from "./routes/FootballPage";
 import Basketball from "./routes/BasketPage";
 import Hockey from "./routes/HockeyPage";
 import Tennis from "./routes/TennisPage";
+import AddBar from "./routes/AddPage";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -24,6 +25,7 @@ export default function App() {
     { path: "/Basketball", element: (<Basketball />)},
     { path: "/Hockey", element: (<Hockey />)},
     { path: "/Tennis", element: (<Tennis />)},
+    { path: "/Add", element: (<AddBar />)},
   
   
   ]);

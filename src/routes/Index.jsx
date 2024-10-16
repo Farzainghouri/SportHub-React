@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Navbar from "../CompunentIndex/Navbar";
+import AddBar from "../CompunentIndex/AddBar";
 import Detail from "../CompunentIndex/Detail";
 import Cricket from "../CompunentIndex/Cricket";
 import FootBall from "../CompunentIndex/FootBall";
@@ -22,6 +23,7 @@ function Index(){
        <div >
            <Navbar />
 
+            <AddBar />  
     
             <Detail />
             <Swipper /> 

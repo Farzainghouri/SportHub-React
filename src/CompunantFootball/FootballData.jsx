@@ -7,7 +7,7 @@ import pic3 from '../assets/bat.jpg';
 import pic2 from '../assets/slider2.jpg';
 import pic4 from '../assets/ball.jpg';
 import '../App.css'
-import db from "../Firebase/Firebase";
+import {db} from "../Firebase/Firebase";
 import { Card } from "flowbite-react";
 import { collection, getDocs } from "firebase/firestore";
 
@@ -162,7 +162,7 @@ export default function FootballData(){
 
         {data.map(item => { 
              
-                if (item.cata == "Football") {
+                if (item.cata == "football") {
                   
                   console.log(item.name);
                   return ( 

@@ -4,7 +4,7 @@ import Navbar from "../CompunentIndex/Navbar";
 import Detail from "../CompunentIndex/Detail";
 import Footer from "../CompunentIndex/Footer";
 import Tennis from "../CompunentTennis/TennisData";
-
+import AddBar from "../CompunentIndex/AddBar"
 function FootballPage(){
 
    
@@ -12,6 +12,8 @@ function FootballPage(){
     return(
        <div >
            <Navbar />
+           <AddBar />  
+
            <Detail />
            <Tennis />
             
