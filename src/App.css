@@ -4,3 +4,8 @@
    
 }
 
+.profile-bg{
+    background-image: url(./assets/profile/bg.jpg);
+    background-repeat: no-repeat;
+    background-size:cover
+}

@@ -3,7 +3,7 @@ import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Navigation } from 'swiper/modules';
-import pic2 from '../assets/slider2.jpg';
+import pic2 from '../assets/slider/slider2.jpg';
 
 
 export default function Social(){

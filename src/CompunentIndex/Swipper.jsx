@@ -2,9 +2,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { FreeMode,Pagination } from 'swiper/modules';
-import pic from '../assets/slider1.avif';
-import pic3 from '../assets/bat.jpg';
-import pic2 from '../assets/slider2.jpg';
+import pic from '../assets/slider/slider1.avif';
+import pic2 from '../assets/slider/slider2.jpg';
+import pic3 from '../assets/slider/slider3.jpg';
+import bat from '../assets/bat.jpg';
 import pic4 from '../assets/ball.jpg';
 export default function Swipper(){
     return(

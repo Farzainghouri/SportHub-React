@@ -1,17 +1,11 @@
 "use client";
-// import { Zoom } from 'react-slideshow-image';
-// import 'react-slideshow-image/dist/styles.css'
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-// import { FreeMode,Pagination } from 'swiper/modules';
 // import 'flowbite';
 // import { useEffect } from "react";
 import React from "react";
 import '../routes/Index'; 
-import pic from '../assets/slider1.avif';
+import pic from '../assets/slider/slider1.avif';
+import pic2 from '../assets/slider/slider2.jpg';
 import pic3 from '../assets/bat.jpg';
-import pic2 from '../assets/slider2.jpg';
 import pic4 from '../assets/ball.jpg';
 import '../App.css'
 

@@ -8,6 +8,7 @@ import Basketball from "./routes/BasketPage";
 import Hockey from "./routes/HockeyPage";
 import Tennis from "./routes/TennisPage";
 import AddBar from "./routes/AddPage";
+import Profile from "./routes/ProfilePage";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -27,6 +28,7 @@ export default function App() {
     { path: "/Hockey", element: (<Hockey />)},
     { path: "/Tennis", element: (<Tennis />)},
     { path: "/Add", element: (<AddBar />)},
+    { path: "/Profile", element: (<Profile />)},
   
   
   ]);

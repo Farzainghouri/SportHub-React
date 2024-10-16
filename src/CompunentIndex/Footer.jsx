@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import '../routes/Index'; // Import Tailwind CSS first
-import pic2 from '../assets/logoWhite.png';
+import pic2 from '../assets/logo/logoWhite.png';
 import '../App.css'
 export default function Footer(){
     return(

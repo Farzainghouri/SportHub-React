@@ -3,7 +3,7 @@
 import '../routes/Index'; // Import Tailwind CSS first
 // import 'flowbite';
 // import { useEffect } from "react";
-import logo from '../assets/logoRed.png'
+import logo from '../assets/logo/logoRed.png'
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 
 export  default function Component() {
@@ -30,9 +30,7 @@ export  default function Component() {
             <span className="block text-sm">Bonnie Green</span>
             <span className="block truncate text-sm font-medium">name@flowbite.com</span>
           </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
+          <Dropdown.Item> <a href="./Profile">Profile</a></Dropdown.Item>
           <Dropdown.Divider />
           <Dropdown.Item>Sign out</Dropdown.Item>
         </Dropdown>

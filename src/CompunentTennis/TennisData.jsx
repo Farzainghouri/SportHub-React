@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import '../routes/Index'; 
-import pic from '../assets/slider1.avif';
+import pic from '../assets/slider/slider1.avif';
+import pic2 from '../assets/slider/slider2.jpg';
 import pic3 from '../assets/bat.jpg';
-import pic2 from '../assets/slider2.jpg';
 import pic4 from '../assets/ball.jpg';
 import '../App.css'
 import {db} from "../Firebase/Firebase";
