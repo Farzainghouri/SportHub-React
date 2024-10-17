@@ -23,7 +23,7 @@ const images = [
     pic,
   ];
 
-export default function Cricket(){
+export default function BasketBall(){
     return(
       <div className="">
       <div className="flex justify-center items-center h-40  bg-gray-200 font-serif">
@@ -58,7 +58,7 @@ export default function Cricket(){
    </div>
    <div className=" w-[23%]  my-4">
    <Card
- className="max-w-sm newh-full"
+ className="max-w-sm new "
  imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
  imgSrc={pic}
 >
@@ -81,7 +81,7 @@ export default function Cricket(){
    </div>
    <div className=" w-[23%]  my-4">
    <Card
- className="max-w-sm newh-full"
+ className="max-w-sm new"
  imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
  imgSrc={pic}
 >
@@ -104,7 +104,7 @@ export default function Cricket(){
    </div>
    <div className=" w-[23%]  my-4">
    <Card
- className="max-w-sm newh-full"
+ className="max-w-sm new"
  imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
  imgSrc={pic4}
 >
