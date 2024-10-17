@@ -47,7 +47,7 @@ export default function HockeyData(){
 
            <div className="flex justify-center items-center h-40  bg-gray-200 font-serif">
         <h1 className=" text-4xl  ">
-            CRICKET
+            HOCKEY
         </h1>
     </div>
 

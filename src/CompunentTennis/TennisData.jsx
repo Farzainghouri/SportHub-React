@@ -47,7 +47,7 @@ export default function TennisData(){
 
            <div className="flex justify-center items-center h-40  bg-gray-200 font-serif">
         <h1 className=" text-4xl  ">
-            CRICKET
+            TENNIS
         </h1>
     </div>
 

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FaRunning } from 'react-icons/fa';
 import { signInWithGoogle } from '../Firebase/Firebase';
 import { useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
     const [Email, setEmail] = useState("");
@@ -14,14 +14,14 @@ export default function Login() {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(() => {
-                // navigate("/home");
+                navigate("/Index");
             })
             .catch((error) => {
                 console.error(error);
             });
     };
 
-    //    const navigate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
         let userId = localStorage.getItem("user")
