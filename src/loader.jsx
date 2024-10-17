@@ -10,10 +10,10 @@ export default function Loading() {
     const checkUser = async () => {
         const userId = await localStorage.getItem('userID')
         if (userId !== null) {
-            navigation.navigate('Home')
+            navigation.navigate('Index')
             console.log("user found going home");
         } else (
-            navigation.navigate('Login')
+            navigation.navigate('Index')
         )
     }
     console.log(checkUser);
