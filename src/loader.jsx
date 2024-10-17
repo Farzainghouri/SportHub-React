@@ -12,9 +12,10 @@ export default function Loading() {
         if (userId !== null) {
             navigation.navigate('Index')
             console.log("user found going home");
-        } else (
-            navigation.navigate('Index')
-        )
+        } 
+        // else (
+        //     navigation.navigate('Index')
+        // )
     }
     console.log(checkUser);
     return (
