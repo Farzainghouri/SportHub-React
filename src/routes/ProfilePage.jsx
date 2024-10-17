@@ -4,6 +4,7 @@ import Navbar from "../CompunentIndex/Navbar";
 import Footer from "../CompunentIndex/Footer";
 import AddBar from "../CompunentIndex/AddBar";
 import ImgPotion from "../CompunentProfile/ImgPotion";
+import MyAdds from "../CompunentProfile/MyAdds";
 import 'flowbite';
 import { useEffect } from "react";
 function Profile(){
@@ -16,7 +17,7 @@ function Profile(){
            <Navbar />
            <AddBar />  
             <ImgPotion />
-
+            <MyAdds />
           
 
             <Footer />
