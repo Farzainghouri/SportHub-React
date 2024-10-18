@@ -1,21 +1,22 @@
 import React from "react";
 import { useEffect } from "react"
-
+import { useNavigate } from "react-router-dom";
 
 export default function Loading() {
     useEffect(() => {
         checkUser()
     }, [])
+    const navigate = useNavigate();
 
     const checkUser = async () => {
         const userId = await localStorage.getItem('userID')
-        if (userId == null) {
-            navigation.navigate('/Index')
+        if (userId !== null) {
+            navigate("/Index");
             console.log("user found going home");
         } 
-        // else (
-        //     navigation.navigate('Index')
-        // )
+        else (
+            navigate("/Index")
+        )
     }
     console.log(checkUser);
     return (
