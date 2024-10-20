@@ -19,6 +19,7 @@ import 'flowbite';
 import { HashRouter as Router } from "react-router-dom";
 import Login from "./auth/login";
 import Loading from "./loader";
+import Profilemaking from "./auth/profilemaking";
 
 export default function App() {
 
@@ -35,6 +36,7 @@ export default function App() {
     { path: "/Profile", element: (<Profile />) },
     { path: "/Signup", element: (<Signup />) },
     { path: "/Login", element: (<Login />) },
+    { path: "/Profilemaking", element: (<Profilemaking />) },
 
 
   ]);
