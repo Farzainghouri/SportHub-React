@@ -17,8 +17,24 @@ export  default function Component() {
       navigate("/Profile");
       // alert("dmkdne")
     }
-    const ass = () => {
+    const ca = () => {
       navigate("/Cricket");
+      // alert("dmkdne")
+    }
+    const ft = () => {
+      navigate("/Football");
+      // alert("dmkdne")
+    }
+    const bs = () => {
+      navigate("/Basketball");
+      // alert("dmkdne")
+    }
+    const ha = () => {
+      navigate("/Hockey");
+      // alert("dmkdne")
+    }
+    const ta = () => {
+      navigate("/Tennis");
       // alert("dmkdne")
     }
     const navigate = useNavigate();
@@ -53,11 +69,11 @@ export  default function Component() {
         <Navbar.Link href="/" className=' md:text-white md:hover:text-red-500 rounded-tl-full  hover:bg-transparen  bg-gray-600   font-semibold text-2xl' active>
           Home
         </Navbar.Link>
-        <Navbar.Link onClick={ass}   className=' md:bg-transparent md:text-white md:hover:text-red-500 hover:text-red-600 text-white  bg-gray-600 hover:bg-gray-200 font-semibold text-2xl'>Cricket</Navbar.Link>
-        <Navbar.Link href="./Football" className=' md:bg-transparent md:text-white md:hover:text-red-500 hover:text-red-600 text-white bg-gray-600  hover:bg-gray-200 font-semibold text-2xl'>Football</Navbar.Link>
-        <Navbar.Link href="./Basketball" className=' md:bg-transparent md:text-white md:hover:text-red-500 hover:text-red-600 text-white  bg-gray-600 hover:bg-gray-200 font-semibold text-2xl'>Basketball</Navbar.Link>
-        <Navbar.Link href="./Hockey" className=' md:bg-transparent md:text-white md:hover:text-red-500 hover:text-red-600 text-white bg-gray-600 hover:bg-gray-200 font-semibold text-2xl'>Hockey</Navbar.Link>
-        <Navbar.Link href="/Tennis" className=' md:bg-transparent md:text-white md:hover:text-red-500 hover:text-red-600 text-white bg-gray-600 hover:bg-gray-200 font-semibold text-2xl rounded-bl-full	rounded-br-full	'>Tennis</Navbar.Link>
+        <Navbar.Link onClick={ca}   className=' md:bg-transparent md:text-white md:hover:text-red-500 hover:text-red-600 text-white  bg-gray-600 hover:bg-gray-200 font-semibold text-2xl'>Cricket</Navbar.Link>
+        <Navbar.Link onClick={ft} className=' md:bg-transparent md:text-white md:hover:text-red-500 hover:text-red-600 text-white bg-gray-600  hover:bg-gray-200 font-semibold text-2xl'>Football</Navbar.Link>
+        <Navbar.Link onClick={bs} className=' md:bg-transparent md:text-white md:hover:text-red-500 hover:text-red-600 text-white  bg-gray-600 hover:bg-gray-200 font-semibold text-2xl'>Basketball</Navbar.Link>
+        <Navbar.Link onClick={ha} className=' md:bg-transparent md:text-white md:hover:text-red-500 hover:text-red-600 text-white bg-gray-600 hover:bg-gray-200 font-semibold text-2xl'>Hockey</Navbar.Link>
+        <Navbar.Link onClick={ta} className=' md:bg-transparent md:text-white md:hover:text-red-500 hover:text-red-600 text-white bg-gray-600 hover:bg-gray-200 font-semibold text-2xl rounded-bl-full	rounded-br-full	'>Tennis</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );

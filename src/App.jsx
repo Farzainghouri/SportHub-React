@@ -28,7 +28,7 @@ export default function App() {
     { path: "/", element: (<Loading />) },
     { path: "/Index", element: (<Index />) },
     { path: "/Cricket", element: (<Cricket />) },
-    { path: "/football", element: (<Football />) },
+    { path: "/Football", element: (<Football />) },
     { path: "/Basketball", element: (<Basketball />) },
     { path: "/Hockey", element: (<Hockey />) },
     { path: "/Tennis", element: (<Tennis />) },

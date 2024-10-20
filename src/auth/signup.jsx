@@ -15,11 +15,7 @@ export default function Signup() {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(() => {
-<<<<<<< HEAD
-                navigate("/Index");
-=======
-                navigate("/profilemaking");
->>>>>>> 23146aba9d27b05daf76904865aa74018c7da481
+                navigate("/Profilemaking");
             })
             .catch((error) => {
                 console.error(error);
