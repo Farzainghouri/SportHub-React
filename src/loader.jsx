@@ -15,7 +15,7 @@ export default function Loading() {
             console.log("user found going home");
         } 
         else (
-            navigate("/Index")
+            navigate("/signup")
         )
     }
     console.log(checkUser);
