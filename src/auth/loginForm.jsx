@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import { auth } from "../Firebase/Firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
@@ -14,7 +14,11 @@ export default function Login() {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(() => {
+                if(uid !== null )
                 navigate("/Index");
+            else(
+                navigate("/Signup")
+            )
             })
             .catch((error) => {
                 console.error(error);
@@ -29,8 +33,7 @@ export default function Login() {
         if (userId !== null) {
             navigate("/Index");
         } else {
-            // navigate("/Login");
-
+            navigate("/Login");
         }
     }, [])
 
