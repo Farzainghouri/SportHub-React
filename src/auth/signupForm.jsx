@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { auth, db } from "../Firebase/Firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { Link } from "react-router-dom"
-import { doc, setDoc } from "firebase/firestore";
+import { Link } from "react-router-dom";
+import { addDoc, doc,setDoc  } from "firebase/firestore";
 import { FaRunning } from 'react-icons/fa';
 import { signInWithGoogle } from '../Firebase/Firebase';
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,7 @@ export default function Signup() {
     const [Email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleGoogleSignIn = () => {
@@ -24,30 +25,31 @@ export default function Signup() {
             });
     };
 
-    const signUpDatabase = () => {
-        if (Email != "" && password != "") {
+    const signUpDatabase = (e) => {
+        e.preventDefault(); // Prevent form submission reloading the page
+
+        if (Email !== "" && password !== "") {
+            setIsLoading(true);
             createUserWithEmailAndPassword(auth, Email, password)
                 .then(async (res) => {
-                    setIsloading(true);
-                    const uid = res.user.uid
-                    localStorage.setItem("user", uid)
+                    const uid = res.user.uid;
+                    localStorage.setItem("user", uid);
                     setEmail("");
                     setPassword("");
                     const userData = { Email, uid, name };
-                    console.log(" userData set hai", userData)
-                    await setDoc(doc(db, "users", uid), userData);
-                    navigate("/Profilemaking");
-
+                    console.log("User data set:", userData);
+                    await setDoc(doc(db, "users", name), userData);
+                    setIsLoading(false);
+                    navigate("/profilemaking");
                 })
                 .catch((error) => {
                     alert(error.message);
-                    setIsloading(false)
+                    setIsLoading(false);
                 });
         } else {
-            alert("Enter values")
+            alert("Enter values");
         }
-
-    }
+    };
 
     return (
         <div className="min-h-screen bg-gray-500 flex items-center justify-center">
@@ -60,7 +62,7 @@ export default function Signup() {
                     Create Your Sports Account
                 </h2>
 
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={signUpDatabase}>
                     <div>
                         <label className="block text-sm font-medium text-gray-600">Name</label>
                         <input
@@ -97,9 +99,9 @@ export default function Signup() {
                     <button
                         type="submit"
                         className="w-full py-2 bg-red-600 text-white rounded-md hover:bg-blue-700 transition-all duration-300"
-                        onClick={signUpDatabase}
+                        disabled={isLoading}
                     >
-                        Sign Up
+                        {isLoading ? "Signing Up..." : "Sign Up"}
                     </button>
                 </form>
 
