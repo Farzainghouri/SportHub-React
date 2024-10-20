@@ -27,9 +27,9 @@ export default function Login() {
         let userId = localStorage.getItem("user")
         console.log("TCL: login -> userId", userId)
         if (userId !== null) {
-            // navigate("/home");
+            navigate("/Index");
         } else {
-            // navigate("/");
+            // navigate("/Login");
 
         }
     }, [])
@@ -44,7 +44,8 @@ export default function Login() {
                     console.log("uid localStorage mai gayi", uid)
                     localStorage.setItem("user", uid)
                     console.log(userCredential)
-                    //   window.location.href = "./home"
+                    
+                    navigate("/Index");
                     setEmail("");
                     setPassword("");
 
