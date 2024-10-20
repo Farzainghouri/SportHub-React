@@ -9,6 +9,8 @@ import { signInWithGoogle } from '../Firebase/Firebase';
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
+
+    
     const [Email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
@@ -25,6 +27,7 @@ export default function Signup() {
     };
 
     const signUpDatabase = () => {
+        
         if (Email != "" && password != "") {
             createUserWithEmailAndPassword(auth, Email, password)
                 .then(async (res) => {

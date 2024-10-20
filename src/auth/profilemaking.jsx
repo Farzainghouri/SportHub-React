@@ -1,20 +1,88 @@
 import React, { useState } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
-
+import { collection, addDoc} from "firebase/firestore"
+import {db, storage} from "../Firebase/Firebase";
+import {ref,uploadBytes,getDownloadURL} from "firebase/storage";
 const Profilemaking = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [bio, setBio] = useState('');
+        
+const [pic , setPic] = useState({})
+
+const [formData, setFormData] = useState({
+    Username: "",
+  
+
+    email: "",
+   
+    image: null,
+  });
+  
+  const handleChange = (e) => {
+    
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+      
+    });
+  };
+  
+  const handleImageChange = (e) => {
+    setImage(URL.createObjectURL(e.target.files[0]));
+        console.log(e.target.files[0]);
+        
+    var ul = e.target.files[0];
+    setPic(ul) // Storing selected file for preview/upload
+    console.log(pic);
+    
+    setFormData({
+      ...formData,
+      image : e.target.files[0]
+    });
+  };
+  const storageRef = ref(storage, "ProfilePic/"+pic.name)
+  
+  
+
+
+
+
+  
     const [image, setImage] = useState(null);
 
-    const handleImageChange = (e) => {
-        setImage(URL.createObjectURL(e.target.files[0]));
-    };
+ 
 
     const handleSaveProfile = (e) => {
         e.preventDefault();
-        // Add your save logic here (e.g., save to Firebase or backend)
+        console.log("Form Data: ", formData);
+        uploadBytes(storageRef, pic).then((snapshot) => {
+          console.log('Uploaded a blob or file!');
+          getDownloadURL(storageRef)
+        .then((url) => {
+            console.log("pic url", url);
+            try {
+              const docRef =  addDoc(collection(db, "ProfileData"), {
+                  name: formData.Username,
+                
+                  Url : url,
+                  email : formData.email,
+                
+                });
+                console.log("Document written with ID: ", docRef.id);
+                
+               
+              } catch (e) {
+                console.error("Error adding document: ", e);
+              }
+      
+        }).catch((err) => console.log(err));
+        
+        }
+        
+      );
+
         alert('Profile saved successfully!');
+
+
     };
 
     return (
@@ -43,9 +111,11 @@ const Profilemaking = () => {
                         </label>
                         <input
                             type="file"
+                            name="image"
                             accept="image/*"
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             onChange={handleImageChange}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          
                         />
                     </div>
 
@@ -54,8 +124,10 @@ const Profilemaking = () => {
                         <input
                             type="text"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            name="Username"
+                            value={formData.Username}
+                          
+                            onChange={handleChange}
                             placeholder="Enter your name"
                         />
                     </div>
@@ -65,23 +137,27 @@ const Profilemaking = () => {
                         <input
                             type="email"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            name="email"
+                            value={formData.email}
+                      
+                            onChange={handleChange}
                             placeholder="Enter your email"
                         />
                     </div>
 
-                    <div>
+                    {/* <div>
                         <label className="block text-sm font-medium text-gray-600">Bio</label>
                         <textarea
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             value={bio}
-                            onChange={(e) => setBio(e.target.value)}
+                           
+                            onChange={handleChange}
                             placeholder="Tell us about yourself"
                         />
-                    </div>
+                    </div> */}
 
                     <button
+                    
                         type="submit"
                         className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all duration-300"
                     >

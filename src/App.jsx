@@ -1,6 +1,4 @@
 import * as React from "react";
-
-import * as ReactDOM from "react-dom/client";
 import Index from "./routes/Index";
 import Cricket from "./routes/CricketPage";
 import Football from "./routes/FootballPage";
@@ -8,19 +6,17 @@ import Basketball from "./routes/BasketPage";
 import Hockey from "./routes/HockeyPage";
 import Tennis from "./routes/TennisPage";
 import AddBar from "./routes/AddPage";
-import Profile from "./routes/ProfilePage";
+import Profile from "./routes/MyProfile";
 import Signup from "./auth/signupForm"
+import Profilemaking from "./auth/profilemaking";
+import Login from "./auth/loginForm";
+import Loading from "./loader";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import './index.css'; // Import Tailwind CSS first
+import './index.css'; 
 import 'flowbite';
-import { HashRouter as Router } from "react-router-dom";
-import Login from "./auth/loginForm";
-import Loading from "./loader";
-import Profilemaking from "./auth/profilemaking";
-
 export default function App() {
 
 

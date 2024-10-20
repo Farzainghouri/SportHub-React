@@ -1,5 +1,5 @@
 import SignupForm from '../auth/signupForm'
-function LoginForm(){
+function SignupForm(){
   
 
     return(
@@ -12,4 +12,4 @@ function LoginForm(){
         
     )
 }
-export default LoginForm;
+export default SignupForm;

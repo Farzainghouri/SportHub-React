@@ -1,26 +1,10 @@
-"use client";
-import React from "react";
-import Navbar from "../CompunentIndex/Navbar";
-import Footer from "../CompunentIndex/Footer";
-import AddBar from "../CompunentIndex/AddBar";
-import ImgPotion from "../CompunentProfile/ImgPotion";
-import MyAdds from "../CompunentProfile/MyAdds";
-import 'flowbite';
-import { useEffect } from "react";
-function Profile(){
-    useEffect(() => {
-        import("flowbite"); // Reinitialize Flowbite after mount
-      }, []);
+import ProfileForm from '../auth/profilemaking'
+function ProfileForm(){
+  
 
     return(
        <div >
-           <Navbar />
-           <AddBar />  
-            <ImgPotion />
-            <MyAdds />
-          
-
-            <Footer />
+        <ProfileForm />
         </div>
 
 
@@ -29,4 +13,4 @@ function Profile(){
         
     )
 }
-export default Profile;
+export default ProfileForm;

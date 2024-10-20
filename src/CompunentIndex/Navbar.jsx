@@ -8,7 +8,7 @@ export  default function Component() {
  
 
     const as = () => {
-      navigate("/Profile");
+      navigate("/Profilemaking");
      
     }
     const ca = () => {

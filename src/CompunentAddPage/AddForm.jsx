@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {getFirestore, collection, addDoc, getDocs} from "firebase/firestore"
+import { collection, addDoc} from "firebase/firestore"
 import {db, storage} from "../Firebase/Firebase";
 import {ref,uploadBytes,getDownloadURL} from "firebase/storage";
 const ProductForm = () => {
@@ -31,7 +31,6 @@ const [formData, setFormData] = useState({
       
     });
   };
-  
   const handleImageChange = (e) => {
     var ul = e.target.files[0];
     setPic(ul) // Storing selected file for preview/upload
