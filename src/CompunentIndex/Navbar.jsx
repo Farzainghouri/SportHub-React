@@ -1,41 +1,35 @@
-
-"use client";
 import '../routes/Index'; // Import Tailwind CSS first
-// import 'flowbite';
-// import { useEffect } from "react";
+
 import logo from '../assets/logo/logoRed.png'
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
-// import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 export  default function Component() {
-    // useEffect(() => {
-    //     import("flowbite"); // Reinitialize Flowbite after mount
-    //   }, []);
+ 
 
     const as = () => {
       navigate("/Profile");
-      // alert("dmkdne")
+     
     }
     const ca = () => {
       navigate("/Cricket");
-      // alert("dmkdne")
+     
     }
     const ft = () => {
       navigate("/Football");
-      // alert("dmkdne")
+     
     }
     const bs = () => {
       navigate("/Basketball");
-      // alert("dmkdne")
+     
     }
     const ha = () => {
       navigate("/Hockey");
-      // alert("dmkdne")
+     
     }
     const ta = () => {
       navigate("/Tennis");
-      // alert("dmkdne")
+     
     }
     const navigate = useNavigate();
 
