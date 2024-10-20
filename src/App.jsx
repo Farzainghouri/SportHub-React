@@ -9,7 +9,7 @@ import Hockey from "./routes/HockeyPage";
 import Tennis from "./routes/TennisPage";
 import AddBar from "./routes/AddPage";
 import Profile from "./routes/ProfilePage";
-import Signup from "./auth/signup"
+import Signup from "./auth/signupForm"
 import {
   createBrowserRouter,
   RouterProvider,
@@ -17,7 +17,7 @@ import {
 import './index.css'; // Import Tailwind CSS first
 import 'flowbite';
 import { HashRouter as Router } from "react-router-dom";
-import Login from "./auth/login";
+import Login from "./auth/loginForm";
 import Loading from "./loader";
 import Profilemaking from "./auth/profilemaking";
 

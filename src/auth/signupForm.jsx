@@ -6,11 +6,13 @@ import { Link } from "react-router-dom"
 import { doc, setDoc } from "firebase/firestore";
 import { FaRunning } from 'react-icons/fa';
 import { signInWithGoogle } from '../Firebase/Firebase';
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
     const [Email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
+    const navigate = useNavigate();
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
@@ -34,7 +36,7 @@ export default function Signup() {
                     const userData = { Email, uid, name };
                     console.log(" userData set hai", userData)
                     await setDoc(doc(db, "users", uid), userData);
-                    window.location.href = "/login";
+                    navigate("/Profilemaking");
 
                 })
                 .catch((error) => {

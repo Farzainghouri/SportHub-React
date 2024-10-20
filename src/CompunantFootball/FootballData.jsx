@@ -46,7 +46,7 @@ export default function FootballData(){
 
            <div className="flex justify-center items-center h-40  bg-gray-200 font-serif">
         <h1 className=" text-4xl  ">
-            CRICKET
+            FOOTBALL
         </h1>
     </div>
 

@@ -25,8 +25,6 @@ const images = [
     pic4,
     pic5,
     pic6,
-    pic,
-    pic,
   ];
   
  export default function Slideshow  () {
