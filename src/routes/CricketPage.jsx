@@ -5,6 +5,8 @@ import Detail from "../CompunentIndex/Detail";
 import Footer from "../CompunentIndex/Footer";
 import Cricket from "../CompunantCricket/CricketData";
 import AddBar from "../CompunentIndex/AddBar";
+
+
 function CricketPage(){
 
    

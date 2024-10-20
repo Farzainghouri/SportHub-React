@@ -15,7 +15,7 @@ export default function Signup() {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(() => {
-                navigate("/index");
+                navigate("/Index");
             })
             .catch((error) => {
                 console.error(error);
