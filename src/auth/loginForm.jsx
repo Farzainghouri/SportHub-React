@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React from "react";
 import { auth } from "../Firebase/Firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
@@ -8,17 +8,15 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-    const [Email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    
 
     const handleGoogleSignIn = () => {
+        let uid = localStorage.getItem("user")
         signInWithGoogle()
             .then(() => {
-                if(uid !== null )
-                navigate("/Index");
-            else(
-                navigate("/Signup")
-            )
+                navigate("/Profilemaking")
+            // if(uid !== null ){;}
+            // else(navigate("/Signup") )
             })
             .catch((error) => {
                 console.error(error);
@@ -36,8 +34,12 @@ export default function Login() {
             navigate("/Login");
         }
     }, [])
-
-    const loginToDatabase = () => {
+    
+    const [Email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+    
+const loginToDatabase = () => {
+        console.log(password); 
 
         if (Email != "" && password != "") {
 
@@ -46,6 +48,7 @@ export default function Login() {
                     const uid = userCredential.user.uid
                     console.log("uid localStorage mai gayi", uid)
                     localStorage.setItem("user", uid)
+
                     console.log(userCredential)
                     
                     navigate("/Index");
@@ -61,6 +64,7 @@ export default function Login() {
             alert("enter fields")
         }
     };
+    
 
 
     return (
@@ -74,10 +78,12 @@ export default function Login() {
                     Log In to Your Sports Account
                 </h2>
 
-                <form className="space-y-4" onSubmit={loginToDatabase}>
+                <form className="space-y-4" >
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">Email</label>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-600">Email</label>
                         <input
+                            autoComplete="name"
+                            id="email"
                             type="email"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             value={Email}
@@ -87,9 +93,11 @@ export default function Login() {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">Password</label>
+                        <label htmlFor="password" className="block text-sm font-medium text-gray-600">Password</label>
                         <input
+                             autoComplete="password"
                             type="password"
+                            id="password"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
@@ -100,7 +108,7 @@ export default function Login() {
                     <button
                         type="submit"
                         className="w-full py-2 bg-red-600 text-white rounded-md hover:bg-blue-700 transition-all duration-300"
-                        onClick={loginToDatabase}
+                        onSubmit={loginToDatabase}
                     >
                         Log In
                     </button>

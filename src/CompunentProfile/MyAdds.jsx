@@ -5,7 +5,7 @@ import { doc, deleteDoc } from "firebase/firestore";
 
 export default function MyAdds(){
     const [data, setData] = useState([]);
-
+    let email = localStorage.getItem("email")
     // const deleteFieldInDocument = async (id) => {
     //     await deleteDoc(doc(db, "product", "MR7uARCHrk2rme4WEHRK"));
     //   };
@@ -57,7 +57,7 @@ export default function MyAdds(){
                     </div>
             {data.map(item => { 
              
-             if (item.email) {
+             if (item.email == email) {
                
                console.log(item.name);
                return ( 

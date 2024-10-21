@@ -8,7 +8,7 @@ export default function ImgPotion(){
     const [data, setData] = useState([]);
     const [show, setShow] = useState("hidden");
     const [hid, sethid] = useState("block");
-
+    let email = localStorage.getItem("email")
     const Dp = <FaUserCircle className="text-7xl text-gray-400" /> ;
 
     const fetchedData = async () => {
@@ -53,19 +53,18 @@ export default function ImgPotion(){
     
             
             </div>
-            <div className={`${show}`}>
+            <div  className={`${show}`}>
 
 
-        {data.map(item => { 
+        {data.map((item,index) => { 
             
-            if (item.email == "zain@gmail.com") {
+            if (item.email == email) {
                 
-                console.log(item.name);
                return ( 
-                   <div className="bg-gray-700 ">
+                   <div key={index} className="bg-gray-700 ">
                 <div className="h-[29vw] profile-bg w-full flex justify-center items-end">
                 <div className="">
-                    <img src={item.Url} className="w-[15vw] mb-[-22px] rounded-full border-white border-8" />
+                    <img src={item.Url} className="w-[15vw] h-[15vw] mb-[-22px] rounded-full border-white border-8" />
                 </div>
                 
             </div>
@@ -73,7 +72,7 @@ export default function ImgPotion(){
                 {item.name}
             </h1>
             <h1 className="text-center text-gray-400 pb-6  font-semibold text-lg">
-                {item.email}
+                {email}
             </h1>
     
             

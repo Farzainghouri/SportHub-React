@@ -1,18 +1,69 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
-import { collection, addDoc} from "firebase/firestore"
+import { collection, addDoc, getDocs} from "firebase/firestore"
 import {db, storage} from "../Firebase/Firebase";
+import { useNavigate } from "react-router-dom";
 import {ref,uploadBytes,getDownloadURL} from "firebase/storage";
 const Profilemaking = () => {
+    const [data, setData] = useState([]);
+    // const deleteFieldInDocument = async (id) => {
+    //     await deleteDoc(doc(db, "product", "MR7uARCHrk2rme4WEHRK"));
+    //   };
+    
+    const fetchDataa = async () => {
+        try {
+            const querySnapshot = await getDocs(collection(db, "ProfileData"));
+            const dataArray = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setData(dataArray);
+            let email = localStorage.getItem("email")
+            data.forEach((item) => {
+                console.log(item.email);
+                console.log(email);
+                if (email === item.email) {
+                    alert("You Already Make Profile")
+                    navigate("/Index");
+                    
+                }
+              });
+       
+       
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+
+     
+    };
+    // const check = ()=>{
+    //   
+    // }    
+    
         
 const [pic , setPic] = useState({})
+const navigate = useNavigate();
 
+
+fetchDataa()
+ useEffect(() => {
+ 
+        
+     
+  
+    }, []);
+
+//   let email = localStorage.getItem("email")
+
+// const check = ()=>{
+   
+
+//     // console.log("TCL: login -> userId", userId)
+   
+// }
 const [formData, setFormData] = useState({
     Username: "",
-  
-
     email: "",
-   
     image: null,
   });
   
@@ -41,15 +92,7 @@ const [formData, setFormData] = useState({
   };
   const storageRef = ref(storage, "ProfilePic/"+pic.name)
   
-  
-
-
-
-
-  
     const [image, setImage] = useState(null);
-
- 
 
     const handleSaveProfile = (e) => {
         e.preventDefault();
@@ -62,12 +105,14 @@ const [formData, setFormData] = useState({
             try {
               const docRef =  addDoc(collection(db, "ProfileData"), {
                   name: formData.Username,
-                
                   Url : url,
-                  email : formData.email,
+                  email : email,
                 
                 });
+                localStorage.setItem("email", formData.email)
                 console.log("Document written with ID: ", docRef.id);
+                fetchDataa()
+
                 
                
               } catch (e) {
@@ -93,7 +138,7 @@ const [formData, setFormData] = useState({
                         <img
                             src={image}
                             alt="Profile"
-                            className="w-32 h-32 rounded-full object-cover"
+                            className="w-28 h-28 rounded-full object-cover"
                         />
                     ) : (
                         <FaUserCircle className="text-7xl text-gray-400" />
@@ -106,10 +151,11 @@ const [formData, setFormData] = useState({
 
                 <form className="space-y-4" onSubmit={handleSaveProfile}>
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">
+                        <label htmlFor='img' className="block text-sm font-medium text-gray-600">
                             Upload Profile Picture
                         </label>
                         <input
+                        id='img'
                             type="file"
                             name="image"
                             accept="image/*"
@@ -120,8 +166,10 @@ const [formData, setFormData] = useState({
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">Name</label>
+                        <label htmlFor='name' className="block text-sm font-medium text-gray-600">Name</label>
                         <input
+                            autoComplete="name"
+                            id='name'
                             type="text"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             name="Username"
@@ -133,8 +181,10 @@ const [formData, setFormData] = useState({
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">Email</label>
+                        <label htmlFor='email' className="block text-sm font-medium text-gray-600">Email</label>
                         <input
+                            autoComplete="email"
+                            id='email'
                             type="email"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             name="email"
@@ -145,16 +195,7 @@ const [formData, setFormData] = useState({
                         />
                     </div>
 
-                    {/* <div>
-                        <label className="block text-sm font-medium text-gray-600">Bio</label>
-                        <textarea
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                            value={bio}
-                           
-                            onChange={handleChange}
-                            placeholder="Tell us about yourself"
-                        />
-                    </div> */}
+                 
 
                     <button
                     

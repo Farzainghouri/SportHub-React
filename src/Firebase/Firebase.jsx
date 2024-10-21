@@ -37,11 +37,12 @@ const signInWithGoogle = async () => {
 
         // The signed-in user info
         const user = result.user;
-        console.log("User signed in: ", user);
-        const uid = res.user.uid;
-        localStorage.setItem("user", uid);
+        console.log("User signed in: ", user.uid);
+        localStorage.setItem("user", user.uid);
+        localStorage.setItem("email", user.email);
+        // const uid = res.user.uid;
     // You can save user info like the UID, email, etc. here
-        console.log("User ID: ", user.uid);
+        // console.log("User ID: ", user.uid);
     } catch (error) {
         // Handle Errors here
         const errorCode = error.code;

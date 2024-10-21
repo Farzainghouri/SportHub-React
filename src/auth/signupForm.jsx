@@ -1,15 +1,21 @@
-// Signup.jsx
-import React, { useState } from "react";
+/// Signup.jsx
+import React, { useState,useEffect } from 'react';
 import { auth, db } from "../Firebase/Firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
-import { addDoc, doc,setDoc  } from "firebase/firestore";
+import { doc,setDoc  } from "firebase/firestore";
 import { FaRunning } from 'react-icons/fa';
 import { signInWithGoogle } from '../Firebase/Firebase';
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
-
+    // useEffect(() => {
+    //     let email = localStorage.getItem("email")
+    //     // console.log("TCL: login -> userId", userId)
+    //     if (email == null) {
+    //         navigate("/Profilemaking");
+    //     }
+    // }, [])
     
     const [Email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -27,7 +33,8 @@ export default function Signup() {
             });
     };
 
-    const signUpDatabase = () => {
+    const signUpData = () => {
+       
         if (Email != "" && password != "") {
             createUserWithEmailAndPassword(auth, Email, password)
                 .then(async (res) => {
@@ -61,10 +68,12 @@ export default function Signup() {
                     Create Your Sports Account
                 </h2>
 
-                <form className="space-y-4" onSubmit={signUpDatabase}>
+                <form className="space-y-4" onSubmit={signUpData}>
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">Name</label>
+                        <label htmlFor='name' className="block text-sm font-medium text-gray-600">Name</label>
                         <input
+                            autoComplete="name"
+                            id='name'
                             type="text"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             value={name}
@@ -74,8 +83,10 @@ export default function Signup() {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">Email</label>
+                        <label htmlFor='email' className="block text-sm font-medium text-gray-600">Email</label>
                         <input
+                            autoComplete="email"
+                            id='email'
                             type="email"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             value={Email}
@@ -85,8 +96,10 @@ export default function Signup() {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">Password</label>
+                        <label htmlFor='pasrd' className="block text-sm font-medium text-gray-600">Password</label>
                         <input
+                            autoComplete="password"
+                            id='pasrd'
                             type="password"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             value={password}

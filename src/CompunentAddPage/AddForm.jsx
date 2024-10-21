@@ -12,7 +12,7 @@ const ProductForm = () => {
 
 
 
-const [pic , setPic] = useState({})
+const [Add , setAddpic] = useState({})
 
 const [formData, setFormData] = useState({
     title: "",
@@ -32,16 +32,15 @@ const [formData, setFormData] = useState({
     });
   };
   const handleImageChange = (e) => {
-    var ul = e.target.files[0];
-    setPic(ul) // Storing selected file for preview/upload
-    console.log(pic);
+     var ul = e.target.files[0];
+     setAddpic(ul) // Storing selected file for preview/upload
     
     setFormData({
       ...formData,
       image : e.target.files[0]
     });
   };
-  const storageRef = ref(storage, "img/"+pic.name)
+  const storageRef = ref(storage, "img/"+Add.name)
   
   
 
@@ -51,7 +50,7 @@ const [formData, setFormData] = useState({
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data: ", formData);
-    uploadBytes(storageRef, pic).then((snapshot) => {
+    uploadBytes(storageRef, Add).then((snapshot) => {
       console.log('Uploaded a blob or file!');
       getDownloadURL(storageRef)
     .then((url) => {
@@ -151,6 +150,7 @@ const [formData, setFormData] = useState({
             Email
           </label>
           <input
+            autoComplete="email"
             type="email"
             name="email"
             value={formData.email}

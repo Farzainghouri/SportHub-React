@@ -9,7 +9,7 @@ export default function Loading() {
     const navigate = useNavigate();
 
     const checkUser = async () => {
-        const userId = await localStorage.getItem('userID')
+        const userId = await localStorage.getItem('user')
         if (userId !== null) {
             navigate("/Index");
             console.log("user found going home");
