@@ -1,11 +1,8 @@
-"use client";
-// import { Card } from "flowbite-react";
-// import { useEffect } from "react";
-// import 'flowbite';
+
 import React from "react";
 import '../routes/Index';
 import pic from '../assets/slider/slider1.avif';
-import pic2 from '../assets/slider/slider2.jpg';
+// import pic2 from '../assets/slider/slider2.jpg';
 import pic3 from '../assets/slider/slider3.jpg';
 import pic4 from '../assets/slider/slider4.jpg';
 import pic5 from '../assets/slider/slider5.jpg';
@@ -16,26 +13,23 @@ import { Zoom } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 
 
+const images = [pic, pic6,pic3,pic4,pic5,];
 
 
-const images = [
-    pic,
-    pic2,
-    pic3,
-    pic4,
-    pic5,
-    pic6,
-  ];
   
- export default function Slideshow  () {
+ export default function Slideshow(props) {
+  
       return (
         <div className="h-fit">
+          
 
         <div className="slide-container">
           <Zoom scale={1.5}>
-            {
-                images.map((each, index) => <img key={index} style={{width: "100vw",height:"100vh"}} src={each} />)
-            }
+          <img  style={{width: "100vw",height:"100vh"}} src={images[0]} />
+          <img  style={{width: "100vw",height:"100vh"}} src={images[1]} />
+          <img  style={{width: "100vw",height:"100vh"}} src={images[2]} />
+          <img  style={{width: "100vw",height:"100vh"}} src={images[3]} />
+          <img  style={{width: "100vw",height:"100vh"}} src={images[4]} />
           </Zoom>
         </div>
 
@@ -43,7 +37,9 @@ const images = [
         {/* Swiper  */}
 
 
-
+        {/* {
+                title.map((each, index) => <img key={index} style={{width: "100vw",height:"100vh"}} src={each} />)
+            } */}
 
 
 

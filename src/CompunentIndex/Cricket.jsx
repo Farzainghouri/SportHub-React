@@ -1,12 +1,11 @@
-"use client";
+
 // import 'flowbite';
 // import { useEffect } from "react";
 import React from "react";
 import '../routes/Index'; 
 import pic from '../assets/slider/slider1.avif';
-import pic2 from '../assets/slider/slider2.jpg';
-import pic3 from '../assets/bat.jpg';
-import pic4 from '../assets/ball.jpg';
+// import pic2 from '../assets/slider/slider2.jpg';
+
 import '../App.css'
 
 
@@ -14,16 +13,7 @@ import { Card } from "flowbite-react";
 
 
 
-const images = [
-    pic,
-    pic2,
-    pic,
-    pic,
-    pic,
-    pic,
-    pic,
-    pic,
-  ];
+
 
 export default function Cricket(){
     return(
@@ -41,7 +31,7 @@ export default function Cricket(){
         <Card
       className="max-w-sm new"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={pic3}
+      imgSrc={pic}
     >
       <a href="#">
         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -110,7 +100,7 @@ export default function Cricket(){
         <Card
       className="max-w-sm new"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={pic4}
+      imgSrc={pic}
     >
       <a href="#">
         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">

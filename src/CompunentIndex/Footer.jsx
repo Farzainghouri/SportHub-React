@@ -1,4 +1,4 @@
-"use client";
+
 import React from "react";
 import '../routes/Index'; // Import Tailwind CSS first
 import pic2 from '../assets/logo/logoWhite.png';

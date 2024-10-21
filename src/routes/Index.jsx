@@ -13,11 +13,7 @@ import Footer from "../CompunentIndex/Footer";
 import Swipper from "../CompunentIndex/Swipper";
 
 import 'flowbite';
-import { useEffect } from "react";
 function Index(){
-    useEffect(() => {
-        import("flowbite"); // Reinitialize Flowbite after mount
-      }, []);
 
     return(
        <div >
@@ -25,7 +21,7 @@ function Index(){
 
             <AddBar />  
     
-            <Detail />
+            <Detail title="images"/>
             <Swipper /> 
 
             <Cricket />

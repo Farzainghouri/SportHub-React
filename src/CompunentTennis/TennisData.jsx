@@ -1,11 +1,11 @@
-"use client";
+
 
 import React, { useEffect, useState } from "react";
 import '../routes/Index'; 
-import pic from '../assets/slider/slider1.avif';
-import pic2 from '../assets/slider/slider2.jpg';
-import pic3 from '../assets/bat.jpg';
-import pic4 from '../assets/ball.jpg';
+import pic from '../assets/Tennis/racket.jpg';
+import pic2 from '../assets/Tennis/ball.jpg';
+import pic3 from '../assets/Tennis/net.jpg';
+import pic4 from '../assets/Tennis/shose.jpg';
 import '../App.css'
 import {db} from "../Firebase/Firebase";
 import { Card } from "flowbite-react";
@@ -56,22 +56,22 @@ export default function TennisData(){
         <Card
       className="max-w-sm new"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={pic3}
+      imgSrc={pic}
     >
 
       <div>
         <h1 className="text-4xl font-bold">
-          vgu
+          Rackets
         </h1>
       </div>
       <a href="#">
-        <h5 className="font-semibol  tracking-tight text-gray-500 dark:text-white">
-          uuuhuhuhuhuhuh
+        <h5 className="font-semibol  tracking-tight text-gray-700 dark:text-white">
+          New Racket, Made In Pakistan
         </h5>
       </a>
       
       <div className="flex items-center justify-between">
-        <span className="text-3xl font-bold text-gray-900 dark:text-white">55</span>
+        <span className="text-3xl font-bold text-gray-900 dark:text-white">$115</span>
         <a
           href="#"
           className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
@@ -87,14 +87,19 @@ export default function TennisData(){
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
       imgSrc={pic2}
     >
+       <div className="w-[23%]">
+        <h1 className="text-4xl font-bold">
+          Ball
+        </h1>
+      </div>
       <a href="#">
-        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+        <h5 className="font-semibol  tracking-tight text-gray-700 dark:text-white">
+          New Ball, Made In Pakistan
         </h5>
       </a>
      
       <div className="flex items-center justify-between">
-        <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+        <span className="text-3xl font-bold text-gray-900 dark:text-white">$19</span>
         <a
           href="#"
           className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
@@ -108,16 +113,21 @@ export default function TennisData(){
         <Card
       className="max-w-sm new "
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={pic}
+      imgSrc={pic3}
     >
+      <div className="w-[23%]">
+        <h1 className="text-4xl font-bold">
+          Net
+        </h1>
+      </div>
       <a href="#">
-        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+        <h5 className="font-semibol  tracking-tight text-gray-700 dark:text-white">
+          New Net, Made In Pakistan
         </h5>
       </a>
      
       <div className="flex items-center justify-between">
-        <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+        <span className="text-3xl font-bold text-gray-900 dark:text-white">$399</span>
         <a
           href="#"
           className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
@@ -133,14 +143,19 @@ export default function TennisData(){
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
       imgSrc={pic4}
     >
+       <div className="w-[23%]">
+        <h1 className="text-4xl font-bold">
+          shose
+        </h1>
+      </div>
       <a href="#">
-        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+        <h5 className="font-semibol  tracking-tight text-gray-700 dark:text-white">
+          New shose, Made In Pakistan
         </h5>
       </a>
       
       <div className="flex items-center justify-between">
-        <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+        <span className="text-3xl font-bold text-gray-900 dark:text-white">$249</span>
         <a
           href="#"
           className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
@@ -171,7 +186,7 @@ export default function TennisData(){
                     
                                   <Card key={item.id}
       className="max-w-sm new w-[23%] my-4"
-      imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
+      imgAlt={item.name}
       imgSrc={item.Url}
     >
 

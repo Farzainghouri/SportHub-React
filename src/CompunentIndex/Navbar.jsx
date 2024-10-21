@@ -1,12 +1,11 @@
 import '../routes/Index'; // Import Tailwind CSS first
 import React, { useEffect, useState } from "react";
 import logo from '../assets/logo/logoRed.png'
-import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import { Dropdown, Navbar } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from 'react-icons/fa';
 import {db} from "../Firebase/Firebase";
 import { collection, getDocs } from "firebase/firestore";
-import { iterate } from 'localforage';
 export  default function Component() {
   const [data, setData] = useState([]);
   const [image, setImage] = useState(null);
