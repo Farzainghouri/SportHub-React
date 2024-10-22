@@ -4,12 +4,12 @@ import { collection, addDoc, getDocs} from "firebase/firestore"
 import {db, storage} from "../Firebase/Firebase";
 import { useNavigate } from "react-router-dom";
 import {ref,uploadBytes,getDownloadURL} from "firebase/storage";
+import looder from '../assets/loder.gif'
 const Profilemaking = () => {
     const [data, setData] = useState([]);
-    // const deleteFieldInDocument = async (id) => {
-    //     await deleteDoc(doc(db, "product", "MR7uARCHrk2rme4WEHRK"));
-    //   };
-    
+    const [hide , sethide] = useState("hidden")
+const [show , setshow] = useState("block")
+
     const fetchDataa = async () => {
         try {
             const querySnapshot = await getDocs(collection(db, "ProfileData"));
@@ -43,7 +43,12 @@ const Profilemaking = () => {
                 navigate("/Index");
                 
             }
-          });}
+            
+          }
+         
+        )
+        
+        ;}
     
         
 const [pic , setPic] = useState({})
@@ -82,6 +87,7 @@ const [formData, setFormData] = useState({
   };
   
   const handleImageChange = (e) => {
+
     setImage(URL.createObjectURL(e.target.files[0]));
         console.log(e.target.files[0]);
         
@@ -99,6 +105,8 @@ const [formData, setFormData] = useState({
     const [image, setImage] = useState(null);
 
     const handleSaveProfile = (e) => {
+        sethide("block")
+        setshow("hidden")
         e.preventDefault();
         console.log("Form Data: ", formData);
         uploadBytes(storageRef, pic).then((snapshot) => {
@@ -117,6 +125,8 @@ const [formData, setFormData] = useState({
                 });
                 console.log("Document written with ID: ", docRef.id);
                 fetchDataa()
+                sethide("hidden")
+                setshow("block")
 
                 
                
@@ -202,13 +212,17 @@ const [formData, setFormData] = useState({
 
                  
 
-                    <button
-                    
-                        type="submit"
-                        className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all duration-300"
-                    >
-                        Save Profile
-                    </button>
+<button
+           
+            type="submit"
+            className="w-full flex justify-center items-center bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            <img src={looder} className={`rounded-full ${hide}`} width="40px" />
+            <p className={` ${show}`}>
+            Submit
+
+            </p>
+          </button>
                 </form>
             </div>
         </div>

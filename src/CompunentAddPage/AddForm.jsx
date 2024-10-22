@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { collection, addDoc} from "firebase/firestore"
 import {db, storage} from "../Firebase/Firebase";
 import {ref,uploadBytes,getDownloadURL} from "firebase/storage";
+import looder from '../assets/loder.gif'
 const ProductForm = () => {
-//   if (category.value !== "select catagory") {
-  
-    
-// }
+const [hide , sethide] = useState("hidden")
+const [show , setshow] = useState("block")
 
 
 
@@ -18,8 +17,8 @@ const [formData, setFormData] = useState({
     title: "",
     description: "",
     category: "",
-    email: "",
     price: "",
+    num: "",
     image: null,
   });
   
@@ -28,6 +27,18 @@ const [formData, setFormData] = useState({
     setFormData({
       ...formData,
       [name]: value,
+      
+    });
+  };
+  const hh = (e) => {
+    setFormData({
+      ...formData,
+      title: "",
+    description: "",
+    category: "",
+    price: "",
+    num: "",
+    image: null,
       
     });
   };
@@ -46,8 +57,13 @@ const [formData, setFormData] = useState({
 
 
   
+  
 
+  let email = localStorage.getItem("email")
   const handleSubmit = (e) => {
+    hh()
+    sethide("block")
+    setshow("hidden")
     e.preventDefault();
     console.log("Form Data: ", formData);
     uploadBytes(storageRef, Add).then((snapshot) => {
@@ -60,11 +76,15 @@ const [formData, setFormData] = useState({
               name: formData.title,
               price:  formData.price ,
               Url : url,
-              email : formData.email,
+              email : email,
+              num : formData.num,
               despt: formData.description,
               cata : formData.category,
             });
             console.log("Document written with ID: ", docRef.id);
+            sethide("hidden")
+             setshow("block")
+             
             
            
           } catch (e) {
@@ -144,20 +164,20 @@ const [formData, setFormData] = useState({
           </select>
         </div>
 
-        {/* Email */}
+        {/* num */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-            Email
+          <label htmlFor="num" className="block text-sm font-medium text-gray-700">
+            Number
           </label>
           <input
-            autoComplete="email"
-            type="email"
-            name="email"
-            value={formData.email}
+            autoComplete="num"
+            type="number"
+            name="num"
+            value={formData.num}
             onChange={handleChange}
-            id="email"
+            id="num"
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            placeholder="Enter your email"
+            placeholder="Enter your number"
             required
           />
         </div>
@@ -199,9 +219,13 @@ const [formData, setFormData] = useState({
         <div>
           <button
             type="submit"
-            className="w-full bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full flex justify-center items-center bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
+            <img src={looder} className={`rounded-full ${hide}`} width="40px" />
+            <p className={` ${show}`}>
             Submit
+
+            </p>
           </button>
         </div>
       </form>
