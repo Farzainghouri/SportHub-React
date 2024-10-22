@@ -18,16 +18,7 @@ const Profilemaking = () => {
                 ...doc.data(),
             }));
             setData(dataArray);
-            let email = localStorage.getItem("email")
-            data.forEach((item) => {
-                console.log(item.email);
-                console.log(email);
-                if (email === item.email) {
-                    alert("You Already Make Profile")
-                    navigate("/Index");
-                    
-                }
-              });
+           
        
        
       } catch (error) {
@@ -39,15 +30,29 @@ const Profilemaking = () => {
     // const check = ()=>{
     //   
     // }    
+    const check = setTimeout(() => {
+        timer()
+      }, .500);
+
+      const timer =()=>{ 
+        let email = localStorage.getItem("email")
+        data.forEach((item) => {
+            
+            if (email === item.email) {
+                alert("You Already Make Profile")
+                navigate("/Index");
+                
+            }
+          });}
     
         
 const [pic , setPic] = useState({})
 const navigate = useNavigate();
 
 
-fetchDataa()
- useEffect(() => {
- 
+useEffect(() => {
+    
+    fetchDataa()
         
      
   
