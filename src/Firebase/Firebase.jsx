@@ -38,6 +38,7 @@ const signInWithGoogle = async () => {
         // The signed-in user info
         const user = result.user;
         console.log("User signed in: ", user.uid);
+        console.log("User email : ", user.email);
         localStorage.setItem("user", user.uid);
         localStorage.setItem("email", user.email);
         // const uid = res.user.uid;
