@@ -58,7 +58,6 @@ useEffect(() => {
   
     }, []);
 
-//   let email = localStorage.getItem("email")
 
 // const check = ()=>{
    
@@ -68,7 +67,7 @@ useEffect(() => {
 // }
 const [formData, setFormData] = useState({
     Username: "",
-    email: "",
+    // email: "",
     image: null,
   });
   
@@ -107,6 +106,8 @@ const [formData, setFormData] = useState({
           getDownloadURL(storageRef)
         .then((url) => {
             console.log("pic url", url);
+  let email = localStorage.getItem("email")
+
             try {
               const docRef =  addDoc(collection(db, "ProfileData"), {
                   name: formData.Username,
@@ -114,7 +115,6 @@ const [formData, setFormData] = useState({
                   email : email,
                 
                 });
-                localStorage.setItem("email", formData.email)
                 console.log("Document written with ID: ", docRef.id);
                 fetchDataa()
 
@@ -185,7 +185,7 @@ const [formData, setFormData] = useState({
                         />
                     </div>
 
-                    <div>
+                    {/* <div>
                         <label htmlFor='email' className="block text-sm font-medium text-gray-600">Email</label>
                         <input
                             autoComplete="email"
@@ -198,7 +198,7 @@ const [formData, setFormData] = useState({
                             onChange={handleChange}
                             placeholder="Enter your email"
                         />
-                    </div>
+                    </div> */}
 
                  
 
