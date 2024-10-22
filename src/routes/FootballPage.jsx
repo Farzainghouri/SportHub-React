@@ -1,7 +1,7 @@
 
 import React from "react";
 import Navbar from "../CompunentIndex/Navbar";
-import Detail from "../CompunentIndex/Detail";
+import Detail from "../CompunantFootball/Detail";
 import Footer from "../CompunentIndex/Footer";
 import Football from "../CompunantFootball/FootballData";
 import AddBar from "../CompunentIndex/AddBar";
