@@ -25,21 +25,18 @@ const images = [pic, pic6,pic3,pic4,pic5,];
 
         <div className="slide-container">
           <Zoom scale={1.5}>
-          <img  style={{width: "100vw",height:"100vh"}} src={images[0]} />
-          <img  style={{width: "100vw",height:"100vh"}} src={images[1]} />
-          <img  style={{width: "100vw",height:"100vh"}} src={images[2]} />
-          <img  style={{width: "100vw",height:"100vh"}} src={images[3]} />
-          <img  style={{width: "100vw",height:"100vh"}} src={images[4]} />
+          {
+                images.map((each, index) => <img key={index} style={{width: "100vw"}} className="h-[45vh] sm:h-[65vh] md:h-[100vh]" src={each} />)
+            }
           </Zoom>
         </div>
 
 
         {/* Swiper  */}
 
+        {/*  */}
 
-        {/* {
-                title.map((each, index) => <img key={index} style={{width: "100vw",height:"100vh"}} src={each} />)
-            } */}
+        
 
 
 

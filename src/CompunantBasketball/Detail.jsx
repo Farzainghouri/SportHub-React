@@ -26,7 +26,7 @@ const images = [pic,pic5, pic6,pic3,pic4,];
         <div className="slide-container">
           <Zoom scale={1.5}>
             {
-                images.map((each, index) => <img key={index} style={{width: "100vw",height:"100vh"}} src={each} />)
+               images.map((each, index) => <img key={index} style={{width: "100vw"}} className="h-[45vh] sm:h-[65vh] md:h-[100vh]" src={each} />)
             }
           </Zoom>
         </div>

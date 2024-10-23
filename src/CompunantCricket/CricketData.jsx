@@ -39,135 +39,93 @@ export default function CricketData(){
     return(
       <div>
 
-        <div>
-        <div className="">
-          
+<div className="">
+    
+    <div className="flex justify-center items-center h-40 bg-gray-200 font-serif">
+  <h1 className="text-4xl">CRICKET</h1>
+</div>
 
-           <div className="flex justify-center items-center h-40  bg-gray-200 font-serif">
-        <h1 className=" text-4xl  ">
-            CRICKET
-        </h1>
-    </div>
-
-        <div className="w-[100%] gap-[1.5%] flex flex-wrap mx-1">
-        <div className=" w-[23%] my-4">
-        <Card
-      className="max-w-sm new"
-      imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={pic}
-    >
-
+<div className="w-full gap-4 flex flex-wrap mx-1">
+  <div className="w-full md:w-[48%] lg:w-[23%] my-4">
+    <Card className="max-w-sm new" imgAlt="Cricket Bat" imgSrc={pic}>
       <div>
-        <h1 className="text-4xl font-bold">
-          Bat
-        </h1>
+        <h1 className="text-4xl font-bold">Bat</h1>
       </div>
       <a href="#">
-        <h5 className="font-semibol  tracking-tight text-gray-700 dark:text-white">
+        <h5 className="font-semibold tracking-tight text-gray-700 dark:text-white">
           New Bat, Made In Pakistan
         </h5>
       </a>
-      
       <div className="flex items-center justify-between">
         <span className="text-3xl font-bold text-gray-900 dark:text-white">$35</span>
-        <a
-          href="#"
-          className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-        >
-         BUY
+        <a href="#" className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+          BUY
         </a>
       </div>
     </Card>
-        </div>
-        <div className=" w-[23%]  my-4">
-        <Card
-      className="max-w-sm new "
-      imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={pic2}
-    >
-       <div className="w-[23%]">
-        <h1 className="text-4xl font-bold">
-          Ball
-        </h1>
+  </div>
+
+  <div className="w-full md:w-[48%] lg:w-[23%] my-4">
+    <Card className="max-w-sm new" imgAlt="Cricket Ball" imgSrc={pic2}>
+      <div>
+        <h1 className="text-4xl font-bold">Ball</h1>
       </div>
       <a href="#">
-        <h5 className="font-semibol  tracking-tight text-gray-700 dark:text-white">
+        <h5 className="font-semibold tracking-tight text-gray-700 dark:text-white">
           New Ball, Made In Pakistan
         </h5>
       </a>
-     
       <div className="flex items-center justify-between">
         <span className="text-3xl font-bold text-gray-900 dark:text-white">$13</span>
-        <a
-          href="#"
-          className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-        >
-         BUY
+        <a href="#" className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+          BUY
         </a>
       </div>
     </Card>
-        </div>
-        <div className=" w-[23%]  my-4">
-        <Card
-      className="max-w-sm new "
-      imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={pic3}
-    >
-     <div className="w-[23%]">
-        <h1 className="text-4xl font-bold">
-          Pad
-        </h1>
+  </div>
+
+  <div className="w-full md:w-[48%] lg:w-[23%] my-4">
+    <Card className="max-w-sm new" imgAlt="Cricket Pad" imgSrc={pic3}>
+      <div>
+        <h1 className="text-4xl font-bold">Pad</h1>
       </div>
       <a href="#">
-        <h5 className="font-semibol  tracking-tight text-gray-700 dark:text-white">
+        <h5 className="font-semibold tracking-tight text-gray-700 dark:text-white">
           New Pad, Made In Pakistan
         </h5>
       </a>
-     
       <div className="flex items-center justify-between">
         <span className="text-3xl font-bold text-gray-900 dark:text-white">$139</span>
-        <a
-          href="#"
-          className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-        >
-         BUY
+        <a href="#" className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+          BUY
         </a>
       </div>
     </Card>
-        </div>
-        <div className=" w-[23%]  my-4">
-        <Card
-      className="max-w-sm new"
-      imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={pic4}
-    >
-       <div className="w-[23%]">
-        <h1 className="text-4xl font-bold">
-          Shose
-        </h1>
+  </div>
+
+  <div className="w-full md:w-[48%] lg:w-[23%] my-4">
+    <Card className="max-w-sm new" imgAlt="Cricket Shoes" imgSrc={pic4}>
+      <div>
+        <h1 className="text-4xl font-bold">Shoes</h1>
       </div>
       <a href="#">
-        <h5 className="font-semibol  tracking-tight text-gray-700 dark:text-white">
-          New Shose, Made In Pakistan
+        <h5 className="font-semibold tracking-tight text-gray-700 dark:text-white">
+          New Shoes, Made In Pakistan
         </h5>
       </a>
-      
       <div className="flex items-center justify-between">
         <span className="text-3xl font-bold text-gray-900 dark:text-white">$179</span>
-        <a
-          href="#"
-          className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-        >
-         BUY
+        <a href="#" className="rounded-lg bg-red-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+          BUY
         </a>
       </div>
     </Card>
-        </div>
-       
-       
-       
-    
+  </div>
 </div>
+
+
+</div>
+       
 
 <div>
   <div>
@@ -218,8 +176,6 @@ export default function CricketData(){
 </div>
 </div>
 </div>
-        </div>
-      </div>
     )
 
 }

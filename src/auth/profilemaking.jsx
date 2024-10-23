@@ -6,62 +6,60 @@ import { useNavigate } from "react-router-dom";
 import {ref,uploadBytes,getDownloadURL} from "firebase/storage";
 import looder from '../assets/loder.gif'
 const Profilemaking = () => {
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
     const [hide , sethide] = useState("hidden")
-const [show , setshow] = useState("block")
+    const [show , setshow] = useState("block")
 
-    const fetchDataa = async () => {
-        try {
-            const querySnapshot = await getDocs(collection(db, "ProfileData"));
-            const dataArray = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setData(dataArray);
+    // const fetchDataa = async () => {
+    //     try {
+    //         const querySnapshot = await getDocs(collection(db, "ProfileData"));
+    //         const dataArray = querySnapshot.docs.map((doc) => ({
+    //             id: doc.id,
+    //             ...doc.data(),
+    //         }));
+    //         setData(dataArray);
            
        
        
-      } catch (error) {
-        console.error("Error fetching data: ", error);
-      }
+    //   } catch (error) {
+    //     console.error("Error fetching data: ", error);
+    //   }
 
      
-    };
-    // const check = ()=>{
-    //   
-    // }    
-    const check = setTimeout(() => {
-        timer()
-      }, .500);
+    // };
+  
+    // const check = setTimeout(() => {
+    //     timer()
+    //   }, .500);
 
-      const timer =()=>{ 
-        let email = localStorage.getItem("email")
-        data.forEach((item) => {
+    //   const timer =()=>{ 
+    //     let email = localStorage.getItem("email")
+    //     data.forEach((item) => {
             
-            if (email === item.email) {
-                alert("You Already Make Profile")
-                navigate("/Index");
+    //         if (email === item.email) {
+    //             alert("You Already Make Profile")
+    //             navigate("/Index");
                 
-            }
+    //         }
             
-          }
+    //       }
          
-        )
+    //     )
         
-        ;}
+    //     ;}
     
         
 const [pic , setPic] = useState({})
 const navigate = useNavigate();
 
 
-useEffect(() => {
+// useEffect(() => {
     
-    fetchDataa()
+//     fetchDataa()
         
      
   
-    }, []);
+//     }, []);
 
 
 // const check = ()=>{
@@ -124,11 +122,10 @@ const [formData, setFormData] = useState({
                 
                 });
                 console.log("Document written with ID: ", docRef.id);
-                fetchDataa()
                 sethide("hidden")
                 setshow("block")
-
-                
+                alert('Profile saved successfully!');
+                navigate("/Simpleloder");
                
               } catch (e) {
                 console.error("Error adding document: ", e);
@@ -140,7 +137,7 @@ const [formData, setFormData] = useState({
         
       );
 
-        alert('Profile saved successfully!');
+        
 
 
     };

@@ -10,12 +10,12 @@ import pic3 from '../assets/social/shosead.jpg';
 
 export default function Social(){
     return(
-        <div className='h-[90vh] flex justify-center items-center w-full'>
+        <div className='h-[40vh] sm:h[30vh] md:h-[60vh] flex justify-center items-center w-full'>
 
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-        <SwiperSlide><img src={pic} className='w-full h-[60vh]' /></SwiperSlide>
-        <SwiperSlide><img src={pic2} className='w-full h-[60vh]' /></SwiperSlide>
-        <SwiperSlide><img src={pic3} className='w-full h-[60vh]' /></SwiperSlide>
+        <SwiperSlide><img src={pic} className='w-full h-[40vh] sm:h[60vh] md:h-[60vh]' /></SwiperSlide>
+        <SwiperSlide><img src={pic2} className='w-full h-[40vh] sm:h[60vh] md:h-[60vh]' /></SwiperSlide>
+        <SwiperSlide><img src={pic3} className='w-full h-[40vh] sm:h[60vh] md:h-[60vh]' /></SwiperSlide>
         
        
       </Swiper>

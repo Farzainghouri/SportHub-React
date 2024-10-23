@@ -11,6 +11,7 @@ import Signup from "./auth/signupForm"
 import Profilemaking from "./auth/profilemaking";
 import Login from "./auth/loginForm";
 import Loading from "./loader";
+import Simpleloder from "./simpleLoder";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -33,6 +34,7 @@ export default function App() {
     { path: "/Signup", element: (<Signup />) },
     { path: "/Login", element: (<Login />) },
     { path: "/Profilemaking", element: (<Profilemaking />) },
+    { path: "/Simpleloder", element: (<Simpleloder />) },
 
 
   ]);

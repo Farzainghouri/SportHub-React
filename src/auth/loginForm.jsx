@@ -14,7 +14,7 @@ export default function Login() {
         let uid = localStorage.getItem("user")
         signInWithGoogle()
             .then(() => {
-                navigate("/Profilemaking")
+                navigate("/Simpleloder")
             // if(uid !== null ){;}
             // else(navigate("/Signup") )
             })
