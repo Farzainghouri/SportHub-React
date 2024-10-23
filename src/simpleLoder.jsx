@@ -5,9 +5,8 @@ import {db} from "./Firebase/Firebase";
 
 const Loader = () => {
     const [data, setData] = useState([]);
-    const navigate = useNavigate();
     const fetchDataa = async () => {
-        try {
+      try {
             const querySnapshot = await getDocs(collection(db, "ProfileData"));
             const dataArray = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
@@ -21,15 +20,16 @@ const Loader = () => {
         console.error("Error fetching data: ", error);
       }
 
-     
+      
     };
     const check = setTimeout(() => {
-        
-        timer()
+      
+      timer()
     }, 2000);
-    let email = localStorage.getItem("email")
+    const navigate = useNavigate();
     
     const timer = () => { 
+      let email = localStorage.getItem("email")
         
         for (let item of data) {
 
@@ -44,13 +44,8 @@ const Loader = () => {
       };
 
 
-      useEffect(() => {
-          
-          fetchDataa()
-                
-             
-          
-            }, []);
+      fetchDataa()
+  
 
 
   return (
