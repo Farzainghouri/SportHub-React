@@ -19,10 +19,14 @@ import pic14 from '../assets/Tennis/ball.jpg';
 import pic15 from '../assets/Tennis/net.jpg';
 import pic16 from '../assets/Tennis/shose.jpg';
 export default function Swipper(){
+
+  const img = [
+    pic9,pic12,pic4,pic7,pic6,pic16,pic13,pic15,pic3,pic2,pic5,pic8,pic11,pic2,pic14,pic10,pic2,pic
+  ]
     return(
 
 
-        <div className="h-[85vh] "> 
+        <div className="h-[60vh] xl:h-[75vh]"> 
     <div className="flex justify-center items-center h-40  bg-gray-200 font-serif">
         <h1 className=" text-4xl  ">
             ALL CATAGORY
@@ -65,22 +69,13 @@ export default function Swipper(){
   modules={[FreeMode, Pagination]}
   className="mySwiper"
 >
-  <SwiperSlide><img src={pic4} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic2} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic5} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic9} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic13} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic3} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic6} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic9} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic12} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic16} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic7} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic15} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic14} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic4} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={pic2} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+  
+  {
+      img.map((each, index) => <SwiperSlide key={index} className='h-[300px]'><img  src={each} className=" rounded-3xl w-full hover:-z-20 h-[230px]" alt="" /><button className='text-center w-full bg-red-700 hover:bg-red-900 rounded-lg text-white h-[30px]'>Buy</button> </SwiperSlide>
+      
+    )
+      }
+ 
 </Swiper>
 
 </div>
@@ -90,29 +85,18 @@ export default function Swipper(){
 
 
 
-// <Swiper
-// slidesPerView={6}
-// spaceBetween={2}
-// freeMode={true}
-// pagination={{
-//   clickable: true,
-// }}
-// modules={[FreeMode, Pagination]}
-// className="mySwiper"
-// >
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-// <SwiperSlide><img src={pic} className="rounded-3xl w-[30vw] h-[270px]" alt="" /></SwiperSlide>
-
-// </Swiper>
+{/* <SwiperSlide><img src={pic2} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic5} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic9} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic13} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic3} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic6} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic9} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic12} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic16} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic7} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic15} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic14} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic4} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide>
+<SwiperSlide><img src={pic2} className="rounded-3xl w-full h-[270px]" alt="" /></SwiperSlide> */}

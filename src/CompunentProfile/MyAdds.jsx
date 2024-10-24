@@ -37,7 +37,7 @@ export default function MyAdds(){
                </h1>
           </div>
 
-<div className="h-10 w-full p-2 my-4 bg-gray-300 flex justify-between  hidden sm:flex items-center" >
+<div className="h-10 w-full hidden p-2 my-4 bg-gray-300 justify-between sm:flex items-center" >
                    <div className="h-40 w-[25%] flex justify-center items-center ">
                        
                    </div>
@@ -59,6 +59,8 @@ export default function MyAdds(){
                    </div>
 
                     </div>
+
+                    
                     <div className="h-96 overflow-scroll">
 
 
