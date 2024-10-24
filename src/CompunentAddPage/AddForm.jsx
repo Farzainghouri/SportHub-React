@@ -65,12 +65,9 @@ const [formData, setFormData] = useState({
     sethide("block")
     setshow("hidden")
     e.preventDefault();
-    console.log("Form Data: ", formData);
     uploadBytes(storageRef, Add).then((snapshot) => {
-      console.log('Uploaded a blob or file!');
       getDownloadURL(storageRef)
     .then((url) => {
-        console.log("pic url", url);
         try {
           const docRef =  addDoc(collection(db, "product"), {
               name: formData.title,
@@ -81,7 +78,6 @@ const [formData, setFormData] = useState({
               despt: formData.description,
               cata : formData.category,
             });
-            console.log("Document written with ID: ", docRef.id);
             sethide("hidden")
              setshow("block")
              

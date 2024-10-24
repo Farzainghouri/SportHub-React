@@ -35,7 +35,6 @@ export default function TennisData(){
     fetchData();
   }, []);
 
-  console.log(data);
   
 
     return(
@@ -142,7 +141,7 @@ export default function TennisData(){
              
                 if (item.cata == "tennis") {
                   
-                  console.log(item.name);
+                  
                   return ( 
 
                     

@@ -12,13 +12,13 @@ export default function Loading() {
         const userId = await localStorage.getItem('user')
         if (userId !== null) {
             navigate("/Index");
-            console.log("user found going home");
+           
         } 
         else (
             navigate("/Login")
         )
     }
-    console.log(checkUser);
+    
     return (
         <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-black to-gray-800">
             <div className="text-center">

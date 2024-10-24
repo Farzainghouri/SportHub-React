@@ -27,8 +27,7 @@ export default function MyAdds(){
       fetchData();
     }, []);
   
-    console.log(data);
-
+  
 
     return(
         <div>
@@ -67,7 +66,7 @@ export default function MyAdds(){
              
              if (item.email == email) {
                
-               console.log(item.name);
+               
                return ( 
 
                     <div className="h-auto w-full p-2 my-4 bg-gray-300 flex flex-col sm:flex-row justify-between items-center" key={item.id}>

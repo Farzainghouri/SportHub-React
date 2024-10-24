@@ -27,7 +27,7 @@ export default function Login() {
 
     useEffect(() => {
         let userId = localStorage.getItem("user")
-        console.log("TCL: login -> userId", userId)
+    
         if (userId !== null) {
             navigate("/Index");
         } else {
@@ -39,17 +39,16 @@ export default function Login() {
 const [password, setPassword] = useState("");
     
 const loginToDatabase = () => {
-        console.log(password); 
+       
 
         if (Email != "" && password != "") {
 
             signInWithEmailAndPassword(auth, Email, password)
                 .then((userCredential) => {
                     const uid = userCredential.user.uid
-                    console.log("uid localStorage mai gayi", uid)
                     localStorage.setItem("user", uid)
 
-                    console.log(userCredential)
+                   
                     
                     navigate("/Index");
                     setEmail("");

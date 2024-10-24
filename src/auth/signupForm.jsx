@@ -43,7 +43,6 @@ export default function Signup() {
                     setEmail("");
                     setPassword("");
                     const userData = { Email, uid, name };
-                    console.log("User data set:", userData);
                     await setDoc(doc(db, "users", name), userData);
                     setIsLoading(false);
                     navigate("/profilemaking");

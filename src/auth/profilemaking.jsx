@@ -87,11 +87,11 @@ const [formData, setFormData] = useState({
   const handleImageChange = (e) => {
 
     setImage(URL.createObjectURL(e.target.files[0]));
-        console.log(e.target.files[0]);
+        
         
     var ul = e.target.files[0];
     setPic(ul) // Storing selected file for preview/upload
-    console.log(pic);
+    
     
     setFormData({
       ...formData,
@@ -106,12 +106,9 @@ const [formData, setFormData] = useState({
         sethide("block")
         setshow("hidden")
         e.preventDefault();
-        console.log("Form Data: ", formData);
         uploadBytes(storageRef, pic).then((snapshot) => {
-          console.log('Uploaded a blob or file!');
           getDownloadURL(storageRef)
         .then((url) => {
-            console.log("pic url", url);
   let email = localStorage.getItem("email")
 
             try {
@@ -121,7 +118,6 @@ const [formData, setFormData] = useState({
                   email : email,
                 
                 });
-                console.log("Document written with ID: ", docRef.id);
                 sethide("hidden")
                 setshow("block")
                 alert('Profile saved successfully!');

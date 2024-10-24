@@ -34,7 +34,6 @@ export default function HockeyData(){
     fetchData();
   }, []);
 
-  console.log(data);
   
 
     return(
@@ -142,7 +141,7 @@ export default function HockeyData(){
              
                 if (item.cata == "hockey") {
                   
-                  console.log(item.name);
+                  
                   return ( 
 
                     

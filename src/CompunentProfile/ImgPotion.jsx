@@ -31,8 +31,7 @@ export default function ImgPotion(){
       fetchedData();
     }, []);
 
-    console.log(data);
-
+  
 
     return(
         <div>

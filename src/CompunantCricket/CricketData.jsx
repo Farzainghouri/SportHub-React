@@ -33,7 +33,6 @@ export default function CricketData(){
     fetchData();
   }, []);
 
-  console.log(data);
   
 
     return(
@@ -136,7 +135,7 @@ export default function CricketData(){
              
                 if (item.cata == "cricket") {
                   
-                  console.log(item.name);
+                  
                   return ( 
 
                     

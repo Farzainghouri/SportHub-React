@@ -21,7 +21,7 @@ function Index(){
 
             <AddBar />  
     
-            <Detail title="images"/>
+            <Detail />
             <Swipper /> 
 
             <Cricket />

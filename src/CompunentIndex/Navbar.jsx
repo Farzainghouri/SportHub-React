@@ -40,7 +40,7 @@ const timer =()=>{
       
       if (email === item.email) {
         
-        console.log("done");
+        
         setImage(item.Url)
         setUsername(item.name)
           

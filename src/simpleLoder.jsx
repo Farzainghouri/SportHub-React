@@ -14,7 +14,7 @@ const Loader = () => {
                 ...doc.data(),
             }));
             setData(dataArray);
-           
+            
        
        
       } catch (error) {
@@ -23,30 +23,40 @@ const Loader = () => {
 
       
     };
-   setTimeout(() => {
-          timer()
-        }, .500);
-  
-        const timer =()=>{ 
-          let email = localStorage.getItem("email")
-          data.forEach((item) => {
-              
-              if (email === item.email) {
-                  alert("You Profile is done")
-                  navigate("/Index")
-                  
-              }else(
-                navigate("/Profilemaking")
-              )
-              
-            }
-           
-          )
-          
-          ;}
+    fetchDataa()
+    setTimeout(() => {
+      timer();
+    }, 2000);
+    
+    const timer = () => {
+      let email = localStorage.getItem("email");
+    
+      // Check if email exists in localStorage before processing
+      if (!email) {
+        alert("No email found in localStorage");
+        return;
+      }
+    
+      let emailFound = false; // Track if a matching email was found
+    
+      data.forEach((item) => {
+        if (item.email === null) {
+          navigate("/Profilemaking");
+        } else if (item.email === email) {
+          // alert("WELCOME");
+          navigate("/Index");
+          emailFound = true;
+        }
+      });
+    
+      // If no matching email was found in the loop, navigate to Profilemaking
+      if (!emailFound) {
+        navigate("/Profilemaking");
+      }
+    };
+    
 
-
-      fetchDataa()
+    
   
 
 

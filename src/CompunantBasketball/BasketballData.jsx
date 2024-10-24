@@ -33,7 +33,6 @@ export default function BasketballData(){
     fetchData();
   }, []);
 
-  console.log(data);
   
 
     return(
@@ -148,7 +147,6 @@ export default function BasketballData(){
              
                 if (item.cata == "basketball") {
                   
-                  console.log(item.name);
                   return ( 
 
                     

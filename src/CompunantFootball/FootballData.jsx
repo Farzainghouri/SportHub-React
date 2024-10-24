@@ -34,7 +34,6 @@ export default function FootballData(){
     fetchData();
   }, []);
 
-  console.log(data);
   
 
     return(
@@ -142,7 +141,7 @@ export default function FootballData(){
              
                 if (item.cata == "football") {
                   
-                  console.log(item.name);
+                  
                   return ( 
 
                     
