@@ -68,7 +68,7 @@ export default function ImgPotion(){
                 </div>
                 
             </div>
-            <h1 className="text-center mt-12 font-bold text-4xl">
+            <h1 className="text-center mt-12 font-bold text-4xl uppercase">
                 {item.name}
             </h1>
             <h1 className="text-center text-gray-400 pb-6  font-semibold text-lg">

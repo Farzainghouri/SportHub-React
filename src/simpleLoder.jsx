@@ -5,6 +5,7 @@ import {db} from "./Firebase/Firebase";
 
 const Loader = () => {
     const [data, setData] = useState([]);
+    const navigate = useNavigate();
     const fetchDataa = async () => {
       try {
             const querySnapshot = await getDocs(collection(db, "ProfileData"));
@@ -22,26 +23,27 @@ const Loader = () => {
 
       
     };
-    const check = setTimeout(() => {
-      
-      timer()
-    }, 2000);
-    const navigate = useNavigate();
-    
-    const timer = () => { 
-      let email = localStorage.getItem("email")
-        
-        for (let item of data) {
-
-            if (email === item.email) {
-            alert("Profile Done");
-            navigate("/Index");  
-            return;  
-          }
-        }
-      alert("Please Wait")
-        navigate("/Profilemaking");
-      };
+   setTimeout(() => {
+          timer()
+        }, .500);
+  
+        const timer =()=>{ 
+          let email = localStorage.getItem("email")
+          data.forEach((item) => {
+              
+              if (email === item.email) {
+                  alert("You Profile is done")
+                  navigate("/Index")
+                  
+              }else(
+                navigate("/Profilemaking")
+              )
+              
+            }
+           
+          )
+          
+          ;}
 
 
       fetchDataa()
