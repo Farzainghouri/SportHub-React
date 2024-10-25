@@ -134,7 +134,7 @@ export default function FootballData(){
 
 <div>
   <div>
-  <div className="w-full gap-4 flex flex-wrap justify-center mx-1">
+  <div className="w-full gap-4 flex flex-wrap mx-1">
 
 
         {data.map(item => { 

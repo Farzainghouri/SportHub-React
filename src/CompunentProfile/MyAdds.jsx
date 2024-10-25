@@ -61,7 +61,7 @@ export default function MyAdds(){
                     </div>
 
                     
-                    <div className="h-96 overflow-scroll">
+                    <div className="max-h-[80vh] overflow-scroll">
 
 
             {data.map(item => { 

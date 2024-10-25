@@ -2,13 +2,12 @@
 import '../routes/Index'; // Import Tailwind CSS first
 ;
 import SellLogo from '../assets/sell.jpg'
-import { Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 
 export  default function Component() {
-    const navigate = useNavigate();
-
+  const navigate = useNavigate();
+  
     const ad = () =>{
         navigate("/Add");
     }

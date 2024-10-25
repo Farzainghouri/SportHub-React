@@ -61,13 +61,13 @@ export default function ImgPotion(){
                 
                return ( 
                    <div key={index} className="bg-gray-700 ">
-                <div className="h-[29vw] profile-bg w-full flex justify-center items-end">
+                <div className="h-[34vw] sm:h-[30vw] md:[29vw] profile-bg w-full flex justify-center items-end">
                 <div className="">
-                    <img src={item.Url} className="w-[15vw] h-[15vw] mb-[-22px] rounded-full border-white border-8" />
+                    <img src={item.Url} className="w-[23vw] h-[23vw] sm:h-[18vw] sm:w-[18vw] md:w-[15vw] md:h-[15vw]  mb-[-22px] rounded-full border-white border-8" />
                 </div>
                 
             </div>
-            <h1 className="text-center mt-12 font-bold text-4xl uppercase">
+            <h1 className="text-center mt-12 font-bold text-4xl font-serif uppercase">
                 {item.name}
             </h1>
             <h1 className="text-center text-gray-400 pb-6  font-semibold text-lg">

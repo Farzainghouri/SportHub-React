@@ -26,17 +26,10 @@ const Loader = () => {
     fetchDataa()
     setTimeout(() => {
       timer();
-    }, 2000);
+    }, 4000);
     
     const timer = () => {
       let email = localStorage.getItem("email");
-    
-      // Check if email exists in localStorage before processing
-      if (!email) {
-        alert("No email found in localStorage");
-        return;
-      }
-    
       let emailFound = false; // Track if a matching email was found
     
       data.forEach((item) => {
@@ -48,11 +41,13 @@ const Loader = () => {
           emailFound = true;
         }
       });
-    
-      // If no matching email was found in the loop, navigate to Profilemaking
-      if (!emailFound) {
-        navigate("/Profilemaking");
+      if (!email) {
+        alert("No email found in localStorage");
+        return;
       }
+    
+     
+    
     };
     
 

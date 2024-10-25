@@ -3,10 +3,10 @@ import { collection, addDoc} from "firebase/firestore"
 import {db, storage} from "../Firebase/Firebase";
 import {ref,uploadBytes,getDownloadURL} from "firebase/storage";
 import looder from '../assets/loder.gif'
+import { useNavigate } from "react-router-dom";
 const ProductForm = () => {
 const [hide , sethide] = useState("hidden")
 const [show , setshow] = useState("block")
-
 
 
 
@@ -58,6 +58,7 @@ const [formData, setFormData] = useState({
 
   
   
+  const navigate = useNavigate();
 
   let email = localStorage.getItem("email")
   const handleSubmit = (e) => {
@@ -71,7 +72,7 @@ const [formData, setFormData] = useState({
         try {
           const docRef =  addDoc(collection(db, "product"), {
               name: formData.title,
-              price:  formData.price ,
+              price: formData.price ,
               Url : url,
               email : email,
               num : formData.num,
@@ -80,7 +81,8 @@ const [formData, setFormData] = useState({
             });
             sethide("hidden")
              setshow("block")
-             
+             alert("Your ad has been posted.")
+             navigate("/Index");
             
            
           } catch (e) {
