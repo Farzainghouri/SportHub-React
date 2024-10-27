@@ -26,7 +26,7 @@ const Loader = () => {
     fetchDataa()
     setTimeout(() => {
       timer();
-    }, 4000);
+    }, 2000);
     
     const timer = () => {
       let email = localStorage.getItem("email");
@@ -39,6 +39,10 @@ const Loader = () => {
           // alert("WELCOME");
           navigate("/Index");
           emailFound = true;
+        } else if (item.email !== email) {
+          setTimeout(() => {
+            navigate("/Profilemaking");
+          }, 4000);
         }
       });
       if (!email) {
