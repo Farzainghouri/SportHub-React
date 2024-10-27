@@ -19,8 +19,8 @@ export default function ImgPotion(){
           ...doc.data(),
         }));
         setData(dataArray);
-        // setShow("block")
-        // sethid("hidden")
+        setShow("block")
+        sethid("hidden")
         
       } catch (error) {
         console.error("Error fetching data: ", error);
@@ -35,7 +35,23 @@ export default function ImgPotion(){
 
     return(
         <div>
-             
+             <div className={`bg-gray-700 ${hid} `}>
+                <div className="h-[29vw] profile-bg w-full flex justify-center items-end">
+                <div className="">
+                    
+                    <FaUserCircle className="text-9xl text-gray-400" />
+                </div>
+                
+            </div>
+            <h1 className="text-center mt-12 font-bold text-4xl">
+                Your Name
+            </h1>
+            <h1 className="text-center text-gray-400 pb-6  font-semibold text-lg">
+                Your Email
+            </h1>
+    
+            
+            </div>
            
 
             <div className="bg-gray-700">
@@ -46,7 +62,7 @@ export default function ImgPotion(){
                 
                return ( 
                 <div  key={index} className="">           
-            <div className="h-[34vw] sm:h-[30vw] profile-bg md:[29vw]  w-full flex justify-center items-end">
+            <div className="h-[34vw] sm:h-[30vw] md:[29vw] profile-bg  w-full flex justify-center items-end">
                    <img src={item.Url} className="w-[23vw] h-[23vw] sm:h-[18vw] sm:w-[18vw] md:w-[15vw] md:h-[15vw]  mb-[-22px] rounded-full border-white border-8" />
                 </div>
             <h1 className="text-center mt-12 font-bold text-4xl font-serif uppercase">
@@ -75,20 +91,3 @@ export default function ImgPotion(){
 }
 
 
-{/* <div className={`bg-gray-700 ${hid} `}>
-                <div className="h-[29vw] profile-bg w-full flex justify-center items-end">
-                <div className="">
-                    
-                    <FaUserCircle className="text-9xl text-gray-400" />
-                </div>
-                
-            </div>
-            <h1 className="text-center mt-12 font-bold text-4xl">
-                Your Name
-            </h1>
-            <h1 className="text-center text-gray-400 pb-6  font-semibold text-lg">
-                Your Email
-            </h1>
-    
-            
-            </div> */}
