@@ -19,8 +19,8 @@ export default function ImgPotion(){
           ...doc.data(),
         }));
         setData(dataArray);
-        setShow("block")
-        sethid("hidden")
+        // setShow("block")
+        // sethid("hidden")
         
       } catch (error) {
         console.error("Error fetching data: ", error);
@@ -35,10 +35,50 @@ export default function ImgPotion(){
 
     return(
         <div>
-             <div className={`bg-gray-700 ${hid} `}>
+             
+           
+
+            <div className="bg-gray-700">
+
+        {data.map((item,index) => { 
+            
+            if (item.email == email) {
+                
+               return ( 
+                <div  key={index} className="">           
+            <div className="h-[34vw] sm:h-[30vw] profile-bg md:[29vw]  w-full flex justify-center items-end">
+                   <img src={item.Url} className="w-[23vw] h-[23vw] sm:h-[18vw] sm:w-[18vw] md:w-[15vw] md:h-[15vw]  mb-[-22px] rounded-full border-white border-8" />
+                </div>
+            <h1 className="text-center mt-12 font-bold text-4xl font-serif uppercase">
+                {item.name}
+            </h1>
+            <h1 className="text-center text-gray-400 pb-6  font-semibold text-lg">
+                {email}
+            </h1>
+            </div>
+
+    
+            
+)
+
+
+} })}
+</div>
+
+         
+
+
+</div>
+       
+
+    )
+}
+
+
+{/* <div className={`bg-gray-700 ${hid} `}>
                 <div className="h-[29vw] profile-bg w-full flex justify-center items-end">
                 <div className="">
-                    {/* <img src={Dp} className="w-[15vw] mb-[-22px] rounded-full border-white border-8" /> */}
+                    
                     <FaUserCircle className="text-9xl text-gray-400" />
                 </div>
                 
@@ -51,40 +91,4 @@ export default function ImgPotion(){
             </h1>
     
             
-            </div>
-            <div  className={`${show}`}>
-
-
-        {data.map((item,index) => { 
-            
-            if (item.email == email) {
-                
-               return ( 
-                   <div key={index} className="bg-gray-700 ">
-                <div className="h-[34vw] sm:h-[30vw] md:[29vw] profile-bg w-full flex justify-center items-end">
-                <div className="">
-                    <img src={item.Url} className="w-[23vw] h-[23vw] sm:h-[18vw] sm:w-[18vw] md:w-[15vw] md:h-[15vw]  mb-[-22px] rounded-full border-white border-8" />
-                </div>
-                
-            </div>
-            <h1 className="text-center mt-12 font-bold text-4xl font-serif uppercase">
-                {item.name}
-            </h1>
-            <h1 className="text-center text-gray-400 pb-6  font-semibold text-lg">
-                {email}
-            </h1>
-    
-            
-            </div>
-)
-}
-
-})}
-            </div>
-
-
-</div>
-       
-
-    )
-}
+            </div> */}

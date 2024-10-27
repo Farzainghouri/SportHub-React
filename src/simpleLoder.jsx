@@ -5,6 +5,8 @@ import {db} from "./Firebase/Firebase";
 
 const Loader = () => {
     const [data, setData] = useState([]);
+    let email = localStorage.getItem("email");
+
     const navigate = useNavigate();
     const fetchDataa = async () => {
       try {
@@ -23,32 +25,54 @@ const Loader = () => {
 
       
     };
+
+    
+    useEffect( () => {
     fetchDataa()
-    setTimeout(() => {
-      timer();
-    }, 2000);
+   
+  }, [])
+
+
+  setTimeout(() => {
+    checking()
+  }, 1000);
+  setTimeout(() => {
+    timer();
+  }, 3000);
     
-    const timer = () => {
-      let email = localStorage.getItem("email");
-      let emailFound = false; // Track if a matching email was found
     
+    const checking = ()=>{
+      
       data.forEach((item) => {
-        if (item.email === null) {
-          navigate("/Profilemaking");
-        } else if (item.email === email) {
-          // alert("WELCOME");
-          navigate("/Index");
-          emailFound = true;
-        } else if (item.email !== email) {
-          setTimeout(() => {
-            navigate("/Profilemaking");
-          }, 4000);
-        }
-      });
-      if (!email) {
-        alert("No email found in localStorage");
-        return;
+        if (item.email === email) {
+          setemail(item.email)
+          
+        }})
+
+        
       }
+    const [useremail, setemail] = useState("");
+      
+      
+    const timer = () => {
+      
+
+      setTimeout(() => {
+        if (useremail === email) {
+          navigate("/Index");
+        }else(
+            navigate("/Profilemaking")
+          
+        )
+      }, 3000);
+      
+      // let emailFound = false; // Track if a matching email was found
+        
+     
+      // if (!email) {
+      //   alert("No email found in localStorage");
+      //   return;
+      // }
     
      
     
