@@ -64,7 +64,7 @@ const Loader = () => {
             navigate("/Profilemaking")
           
         )
-      }, 3000);
+      }, 2000);
       
       // let emailFound = false; // Track if a matching email was found
         
