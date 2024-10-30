@@ -26,6 +26,7 @@ export default function Login() {
     const navigate = useNavigate();
 
     useEffect(() => {
+    
         let userId = localStorage.getItem("user")
     
         if (userId !== null) {
@@ -77,7 +78,7 @@ const loginToDatabase = () => {
                     Log In to Your Sports Account
                 </h2>
 
-                <form className="space-y-4" >
+                <form className="space-y-4" onClick={handleGoogleSignIn}>
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-600">Email</label>
                         <input
@@ -107,7 +108,7 @@ const loginToDatabase = () => {
                     <button
                         type="submit"
                         className="w-full py-2 bg-red-600 text-white rounded-md hover:bg-blue-700 transition-all duration-300"
-                        onSubmit={loginToDatabase}
+                        onClick={handleGoogleSignIn}
                     >
                         Log In
                     </button>

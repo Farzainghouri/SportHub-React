@@ -17,6 +17,7 @@ const Loader = () => {
             }));
             setData(dataArray);
             
+            
        
        
       } catch (error) {
@@ -28,34 +29,34 @@ const Loader = () => {
 
     
     useEffect( () => {
-    fetchDataa()
-   
-  }, [])
-
-
-  setTimeout(() => {
+      fetchDataa()
+      
+    }, [])
+    
+    
+    setTimeout(() => {
     checking()
-  }, 1000);
+  }, .500);
   setTimeout(() => {
     timer();
-  }, 3000);
+  }, 5000);
     
     
     const checking = ()=>{
       
+      
       data.forEach((item) => {
         if (item.email === email) {
-          setemail(item.email)
+          setuseremail(item.email)
           
         }})
 
         
       }
-    const [useremail, setemail] = useState("");
+    const [useremail, setuseremail] = useState("");
       
       
     const timer = () => {
-      
 
       setTimeout(() => {
         if (useremail === email) {

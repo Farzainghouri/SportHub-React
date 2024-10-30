@@ -53,13 +53,15 @@ const [pic , setPic] = useState({})
 const navigate = useNavigate();
 
 
-// useEffect(() => {
+useEffect(() => {
     
-//     fetchDataa()
+  setTimeout(() => {
+    alert("wait")
+  }, 1000);
         
      
   
-//     }, []);
+    }, []);
 
 
 // const check = ()=>{
@@ -121,7 +123,7 @@ const [formData, setFormData] = useState({
                 sethide("hidden")
                 setshow("block")
                 alert('Profile saved successfully!');
-                navigate("/Simpleloder");
+                navigate("/Index");
                
               } catch (e) {
                 console.error("Error adding document: ", e);
@@ -163,6 +165,7 @@ const [formData, setFormData] = useState({
                             Upload Profile Picture
                         </label>
                         <input
+                        required
                         id='img'
                             type="file"
                             name="image"

@@ -67,7 +67,7 @@ export default function Signup() {
                     Create Your Sports Account
                 </h2>
 
-                <form className="space-y-4" onSubmit={signUpData}>
+                <form className="space-y-4" onClick={handleGoogleSignIn}>
                     <div>
                         <label htmlFor='name' className="block text-sm font-medium text-gray-600">Name</label>
                         <input
@@ -108,6 +108,7 @@ export default function Signup() {
                     </div>
 
                     <button
+                        
                         type="submit"
                         className="w-full py-2 bg-red-600 text-white rounded-md hover:bg-blue-700 transition-all duration-300"
                         disabled={isLoading}
