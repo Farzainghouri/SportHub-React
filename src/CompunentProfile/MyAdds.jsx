@@ -95,7 +95,7 @@ export default function MyAdds(){
                           const confirmDelete = window.confirm("Are you sure you want to delete this item?");
                           if (confirmDelete) {
                             deleteDoc(doc(db, "product", item.id));
-                            fetchData();
+                            fetchData()
                           } else {
                             alert("Action cancelled!");
                           }
